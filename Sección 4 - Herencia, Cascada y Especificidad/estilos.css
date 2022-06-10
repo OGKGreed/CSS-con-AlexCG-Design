@@ -50,7 +50,7 @@
 .header{
     height: 400px;
     background: crimson;
-    color: white;
+    /* color: white; */
 
     height: 300px;
     height: 200px;
@@ -86,7 +86,7 @@ h2.title{
 
 /* ? Existe una propiedad que es capaz de romper toda la especificidad de un proyecto, por lo que no se recomienda usarla para nada. Ese valor es !important, y, aunque este valor se agregue arriba del código, no importará cuan específico sea un selector; siempre ganará la prioridad.
 
-! ↓ Agregar las reglas debajo de este comentario al código para ver el comportamiento de la propiedad !important.
+! ↓ Agregar las reglas debajo de este comentario al código para ver el comportamiento de la propiedad !important y por qué no debe usarse.
 TODO: Copiar todas las reglas de cada caso y pegarlas en el código. (Se pueden sobreescribiar algunas o agregar solo las faltantes)
 
 * CASO 1: USO NORMAL DE !IMPORTANT
@@ -123,3 +123,40 @@ body>header>h2.title#title{
 }
 */
 
+
+
+/* ! HERENCIA 
+   ? La herencia es la capacidad de los elementos padre de heredar características a elementos hijos. Estas características son algunas de sus propiedades, pues no todas son heredables; a pesar de esto, podemos forzar a los elementos hijos a obtener propiedades de sus elementos padre.
+   
+   * Valores initial y inherit
+
+        * Initial -> Se usa para definir que un elemento hijo conservará el valor inicial que el explorador le asigno. Por ejemplo: si hereda un color de letras blanco, este regresará a ser negro.
+
+        * Inherit -> Su traducción es "heredado"; sirve para definir que el valor de una propiedad de un elemento hijo será heredado de su elemento padre. Por ejemplo: si tenemos un elemento padre con un font-size de 20px, podemos aplicarle font-size: inherit al elemento hijo para que herede los 20px de tamaño de su elemento padre. 
+
+        ? Inherit puede ser útil para evitar tener que reescribir valores a mano, haciendo que los elementos hijos estén sujetos a los cambios de las propiedades heredadas de su elemento padre.
+
+    ! ↓ Agrega las reglas debajo de este comentario al código para ver ejemplos de herencia.
+    TODO: Copiar ambas reglas y pegarlas en el código. No olvides verificar el inspector de elementos y revisar el apartado "inherit from" para ver qué propiedades se están heredando.
+*/
+/* .header{
+    height: 400px;
+    background: crimson;
+    color: white;
+    border: 5px solid black;
+    font-family: Arial;
+    height: 300px;
+    height: 200px;
+    padding: 10px;
+    text-align: center;
+} */
+
+/* .title{
+    font-size: 25px;
+    border: inherit;
+    padding: inherit;
+    font-family: Helvetica;
+    text-align: initial;
+    color: initial;
+    font-family: initial;
+} */
