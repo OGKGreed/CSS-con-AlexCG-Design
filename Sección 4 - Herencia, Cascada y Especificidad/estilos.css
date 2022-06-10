@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ! PARÉNTESIS DE LA SECCIÓN ANTERIOR (NO SE HABÍA EXPLICADO EL USO DEL DISPLAY EN EL BOX MODEL)
+
+   ? Podemos modificar el comportamiento de un elemento, haciendo que, si este es un elemento en línea, se convierta a un elemento de bloque. En caso contrario, si el elemento es de bloque, podemos convertirlo a un elemento en línea. 
+
+   * Para realizar esta tarea, se hace uso de la propiedad display.
+   * Los elementos de bloque, por defecto, tienen un display:block, mientras que los elementos en línea, tiene un display: inline.
+   
+   * Los elementos de bloque soportan todas las propiedades del box model; sin embargo, los elementos en línea tienen algunas limitaciones. Por ejemplo, no soportan el margin-top ni margin-bottom, o no son capaces de soportar un width más que el de su contenido. 
+
+   ? Podemos crear un "híbrido" de estos dos tipos de comportamiento, definiendo la propiedad display con el valor "inline-block". Este valor hará que el elemento siga siendo un elemento de línea, pero con la capacidad de soportar las propiedades de un elemento de bloque. 
+
+   ! NOTA: A PESAR DE QUE UN ELEMENTO INLINE-BLOCK SOPORTE MÁS CARACTERÍSTICAS, NO PUEDEN CENTRARSE USANDO MARGIN: 0 AUTO A MENOS QUE SE DEFINA UN WIDTH.
+*/
+
+
+/* .enlaces{
+    display: inline-block;
+    text-decoration: none;
+    background: crimson;
+    color: white;
+    padding: 30px 20px;
+}*/
+
+/* ? De igual forma, otro valor de la propiedad display es "none". Este valor oculta un elemento, por lo que si se le aplica a un elemento, desaparecerá del documento con todo, su contenido y espacio reservado. En caso de estar ubicado entre otros elementos a sus lados, estos se recorrerán ocupando su espacio.
+
+   ! NOTA: USAR DISPLAY: NONE NO ES LO MISMO A USAR OPACITY: 0. LA OPACIDAD SÓLO HARÁ QUE EL ELEMENTO SEA TRANSPARENTE (QUE NO TENGA OPACIDAD), Y EL ELEMENTO CONSERVARÁ SU ESPACIO RESERVADO EN EL DOCUMENTO.
+
+*/
+
+/* ? ↓ Descomentar esta regla para ver el uso de display:none y opacity:0 */
+/* 
+.block{
+    display: none;
+    opacity: 0;
+} */
+
+/* ! CASCADA
+   ? La cascada es el flujo que tiene una hoja de estilos CSS. En otras palabras, las propiedades que estén debajo sobreescribirán a las que se encuentren arriba del código, debido a que el flujo va de arriba hacia abajo.
+
+   ! NOTA: SE SOBREESCRIBIRÁN LAS PROPIEDADES DE AQUELLOS ELEMENTOS CUYOS SELECTORES TENGAN LA MISMA ESPECIFICIDAD
+   TODO: Ver notas de especificidad
+
+*/
+.header{
+    height: 400px;
+    background: crimson;
+    color: white;
+
+    height: 300px;
+    height: 200px;
+}
+
+
+
+
+/* ! ESPECIFICIDAD
+   ? La especificidad es la capacidad de un selector de cuán específico es. Cada tipo de selector tiene un valor de especificidad, y entre mayor sea la especifidad, se le dará más prioridad a la regla de dicho selector aunque este se ubique arriba del código. 
+
+   ? Tabla de valores de especificidad:
+     *  1000 -> CSS inline: <elemento style="...">Contenido</elemento> 
+     *  100  -> ID's: #id{ ... }
+     *  10   -> Selectores de clase y atributo: .title, a[href=""]{ ... }
+     *  1    -> Selectores de elemento y pseudoelementos: nav, h1, button{ ... }
+     
+   * Podemos calcular la especificidad contando con cuántos tipos de selectores cuenta un selector. 
+   
+   TODO: Ver ejemplos abajo ↓
+*/
+
+/* ! Ejemplo de especificidad 1: 
+   ? Tiene un selector de clase con un valor de 10 y uno de elemento con un valor de 1, sumando así 11 */
+h2.title{
+    font-size: 15px;
+}
+/* ! Ejemplo de especificidad 2: 
+   ? Tiene sólo tiene un selector de clase con un valor de 10*/
+.title{
+    font-size: 80px;
+}
+
+/* ? Existe una propiedad que es capaz de romper toda la especificidad de un proyecto, por lo que no se recomienda usarla para nada. Ese valor es !important, y, aunque este valor se agregue arriba del código, no importará cuan específico sea un selector; siempre ganará la prioridad.
+
+! ↓ Agregar las reglas debajo de este comentario al código para ver el comportamiento de la propiedad !important.
+TODO: Copiar todas las reglas de cada caso y pegarlas en el código. (Se pueden sobreescribiar algunas o agregar solo las faltantes)
+
+* CASO 1: USO NORMAL DE !IMPORTANT
+* El hecho de usar !important rompe completamente la especificidad, aunque esta regla se ubique arriba o abajo del código.
+? Reglas de ejemplo para el caso 1
+.title{
+    font-size: 10px !important;
+}
+
+* CASO 2: !IMPORTANT CON MAYOR ESPECIFICIDAD
+* En caso que existan más reglas que usen !important, ganará la prioridad aquella que tenga más especificidad.
+? Reglas de ejemplo para el caso 2
+body>header>h2.title#title{
+    font-size: 90px !important
+}
+
+.title{
+    font-size: 10px !important;
+}
+
+* CASO 3: !IMPORTANT POR CASCADA
+* En caso que existan más reglas que usen !important, y que tengan la misma especificidad, ganará la prioridad aquella que esté ubicada más abajo del código, es decir, ganará por cascada .
+? Reglas de ejemplo para el caso 3
+body>header>h2.title#title{
+    font-size: 90px !important
+}
+
+.title{
+    font-size: 10px !important;
+}
+
+body>header>h2.title#title{
+    font-size: 50px !important
+}
+*/
+
