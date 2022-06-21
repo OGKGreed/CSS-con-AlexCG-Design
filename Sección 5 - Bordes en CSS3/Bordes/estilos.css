@@ -1,0 +1,189 @@
+*{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+
+.box{
+    background: orangered;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    margin-top: 40px;
+
+    /* ! BORDES EN CSS (BORDER) */
+    /* ? Para agregar bordes a un elemento, hacemos uso de la propidad Border; esta propiedad hace uso de la siguiente sintaxis: 
+
+        # border: width style color;
+
+        * width -> El width define el grosor del borde en cualquier tipo de medida, por ejemplo: pixeles, rem, etc.
+
+        * style -> Es el estilo del borde; existen varios tipos de estilo de borde.
+        TODO: En caso de requerir ver todos los estilos, ver la documentación en MDN. 
+        source: https://developer.mozilla.org/es/docs/Web/CSS/border-style
+
+        * color -> Este parámetro define el color del borde.
+
+       ? Un factor importante es que la notación anterior representa el shorthand de un borde aplicado a todos sus lados. Por ejemplo:
+
+       # border: 10px dashed brown; 
+       ? ↑ Esta propiedad agregará un borde de 10 pixeles, de tipo dashed, y con un color café, todo en una sola línea. Sin embargo, podemos desglosar dicha propiedad en sus respectivas propiedades por separado.
+
+        * border-width -> Define por separado el tamaño o grosor del borde.
+
+        * border-style -> Define por separado el estilo del borde.
+
+        * border-color -> Define por separado el color del borde.
+
+       ? Ejemplo:
+            # border-width: 20px;
+            # border-style: groove;
+            # border-color: brown; 
+
+       ? A su vez, border-width, border-style, y border-color son shorthands, es decir, pueden soportar hasta 4 valores, cada uno correspondiente al top, right, bottom y left.
+
+       # border-width: top right bottom left;
+       # border-style: top right bottom left;
+       # border-color: top right bottom left;
+
+       * En este caso:
+            * border-width podrá definir hasta 4 grosores distintos para cada lado del borde.
+            * border-style podrá tener hasta 4 estilos distintos de borde para cada lado.
+            * border-color podrá tener hasta 4 colores distintos para cada lado.
+
+       ? De igual forma, encontraremos las propiedades dedicadas para manejar bordes a cada lado de un elemento. Esas propiedades son:
+
+       # border-top
+       # border-right
+       # border-bottom
+       # border-left
+
+       ? Ejemplos:
+            # border-top: 10px solid brown;
+            # border-right: 5px dashed white;
+            # border-bottom: 6px dotted steelblue; 
+            # border-left: 8px double black;
+
+       * Cada propiedad está pensada para modificar un lado específico de un elemento, y al igual que border, estas propiedades también son shorthands por su parte. Es decir, cada uno tendrá su propiedad width, style y color dedicados a cada lado de un elemento.
+
+            # border-top-width: 20px;
+            # border-top-style: double;
+            # border-top-color: crimson;
+
+            # border-right-width: 30px;
+            # border-right-style: dashed;
+            # border-right-color: white;
+
+            # border-bottom-width: 25px;
+            # border-bottom-style: solid;
+            # border-bottom-color: steelblue;
+
+            # border-left-width: 15px;
+            # border-left-style: dotted;
+            # border-left-color: violet;
+    */
+
+}
+
+.img{
+     /* $ Recordatorio: una imagen es un elemento con display inline-block. Para centrarse usando margin: auto, se debe declarar que su display sea block y tener un width declarado. */
+     display: block;
+     width: 400px;
+     margin: 80px auto;
+
+     /* TODO: Descomentar cuando se lea por primera vez. Volver a comentar cuando se haya leído el border-radius desglosado. */
+     /* # border: 20px groove brown; */
+
+     /* ! BORDER RADIUS */
+     /* ? La propiedad border-radius es un shorthand tal como los anteriores; así como puede manejar 4 valores aplicados a cada lado de un elemento (en este caso, a las esquinas) en una misma línea, también se puede desglosar en 4 propiedades específicas. */
+
+     /* ? Valores del shorthand border-radius:
+
+          * border-radius con 1 valor -> Si tiene un valor, se aplicará el redondeado a todas las esquinas
+
+          * border-radius con 2 valores -> El primer valor se aplicará a las esquinas superior izquierda e inferior derecha; el segundo valor a las esquinas superior derecha e inferior izquierda.
+
+          * border-radius con 3 valores -> El primer valor se aplicará a la esquina superior izquierda; el segundo se aplicará en diagonal a las esquinas superior derecha e inferior izquierda; el tercero a la esquina inferior derecha.
+
+          * border-radius con 4 valores -> Cada valor se aplicará de forma independiente en sentido horario. El primero se aplicará a la esquina superior izquierda, el segundo a la superior derecha, el tercero a la inferior derecha y el cuarto a la inferior izquierda.
+
+     */
+     /* TODO: Descomenta los ejemplos para ver cada propiedad en acción */
+     /* ↓ Shorthand manipulando todas las esquinas */
+     /* # border-radius: 30px; */
+     /* ↓ Shorthand manipulando las esquinas en diagonal */
+     /* # border-radius: 30px 10px; */
+     /* ↓ Shorthand manipulando esquinas y diagonal */
+     /* # border-radius: 30px 10px 95px ; */
+     /* ↓ Shorthand manipulando todas las esquinas de forma independiente*/
+     /* # border-radius: 30px 10px 95px 70px; */
+     
+
+     /* ? Propiedades desglosadas de border-radius:
+
+          * border-top-left-radius -> Modifica la esquina superior izquierda
+          
+          * border-top-right-radius -> Modifica la esquina superior derecha
+
+          * border-bottom-right-radius -> Modifica la esquina inferior derecha
+
+          * border-bottom-left-radius -> Modifica la esquina inferior izquierda.
+
+          ? Ejemplos:
+               # border-top-left-radius: 50px;
+               # border-top-right-radius: 20px;
+               # border-bottom-right-radius: 30px;
+               # border-bottom-left-radius: 100px;
+
+     */
+
+     
+}
+
+/* ! PRÁCTICA */
+/* TODO: Descomenta estas reglas para ver los resultados de la práctica. */
+
+/* ? Se pueden hacer figuras circulares con border-radius con un valor del 50%. Algo a tener en cuenta es que esto funcionará sólo si el elemento es un cuadrado, es decir, que tenga un width y un height igual; en caso de no tenerlo, se tendrán que declarar manualmente. */
+
+/* ↓ Reglas de la creación de una Card */
+/* $ Recordatorio: En esta práctica se puede presentar el caso de colapsado de márgenes si se comentan/descomentan las siguientes propiedades de las siguientes reglas:
+
+     $ .card -> border y padding; background es una ayuda visual para ver el colapsado de mejor forma.
+     $ .img -> modificar el primer valor del margin a 5px para ver que el elemento padre se adueña del margin-top de su hijo
+
+   $ El colapsado de márgenes ocurre cuando el margin bottom de un elemento padre entra en contacto con el margin-top de un elemento hijo, pues el hijo desea separarse o tener un margen de su elemento padre, haciendo que el elemento padre se adueñe de ese margin-top y se aplique así mismo.
+
+   $ Para solucionar el colapsado, se agregó un borde al elemento padre, en este caso, el elemento <figure> con la clase .card, pues el colapsado de márgenes se soluciona siempre que haya una capa intermedia entre el margin-bottom del padre y el margin-top del hijo, teniendo así el siguiente orden: margin-bottom > border > margin-top
+
+$ */
+/* .card{
+     margin: 20px auto;
+     width: 400px;
+     border: 1px solid black;
+     background: steelblue;
+     padding: 20px 0;
+}
+.img{
+     display: block;
+     width: 300px;
+     height: 300px;
+     object-fit: cover;
+     margin: 20px auto;
+     border-radius: 50%;
+}
+.name{
+     text-align: center;
+     font-family: Arial;
+}
+.cta{
+     display: block;
+     width: 150px;
+     background: crimson;
+     border-radius: 3px;
+     padding: 15px 0;
+     text-align: center;
+     text-decoration: none;
+     color: white;
+     margin: 20px auto;
+} */
+
