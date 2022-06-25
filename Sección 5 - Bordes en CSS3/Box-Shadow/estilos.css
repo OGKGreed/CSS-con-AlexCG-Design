@@ -13,37 +13,86 @@
     /* ! BOX-SHADOW (SOMBRAS) */
     /* ? La propiedad box-shadow añade una sombra al elemento. Esta propiedad tiene la siguiente sintaxis:
     
-        * box-shadow: h-offset v-offset blur spread color;
+       * box-shadow: h-offset v-offset blur spread color;
         
+            * h-offset -> Es el desplazamiento horizontal, es decir, la medida en la que la sombra se moverá en el eje X.
+
+            * v-offser -> Es el desplazamiento vertical, es decir, la medida en la que la sombra se moverá en el eje Y.
+
+            * blur -> Es la medida en la que la sombra se desvanecerá.
+
+            * spread -> Es la medida en la que la sombra se esparcirá.
+
+            * color -> Es el color de la sombra; por defecto, la sombra es de color negro, es decir, color: black.
+    
+       ? Ejemplo:     
+            ↓ Esta propiedad añade una sombra con todos los argumentos mencionados
+            # box-shadow: 0px 0px 12px 9px crimson;
+
+       ? Box-shadow maneja todos estos argumentos, sin embargo, para funcionar sólo requiere tener especificado el h-offset, v-offset y el color. 
+       
+       ? Ejemplo:
+            ↓ Esta propiedad añade una sombra declarando sólo el desplazamiento en X y Y, al igual que el color.
+            # box-shadow: 0px 0px yellow;
+
+       $ Recordatorio: Algo a tener en cuenta es que la sombra puede adoptar ciertos comportamientos dependiendo de algunas propiedades y valores que se le aplique al elemento, ya sea previamente o bien, en la misma línea. Algunas de estas propiedades son:
+
+            $ color -> Si aplicamos la propiedad color y posteriormente un box-shadow, la sombra puede usar el valor "currentColor"; este valor aplicará el color especificado en la propiedad color. Si este cambia, el color de la sombra aplicada con currentColor lo hará de igual forma. 
+            
+            $ Ejemplo:
+                # color: crimson;
+                # box-shadow: 10px 10px 0 0 currentColor;
+            
+            $ border-radius, width y height -> La sombra adopta exactamente la misma forma que el elemento, es decir, replica su tamaño en ancho y altura, y de igual forma, si a este se le aplica un border-radius; si redondeamos un elemento con border-radius: 50%, la sombra de igual forma será redondeada.
+
+            $ Ejemplo:
+                # border-radius: 50%;
+
+            $ De igual forma, podemos hacer una sombra con un tamaño o escalado mayor al del elemento original dando un valor más grande al spread, creando así una sombra más grande que el elemento, pero conservando la misma forma.
+
+            $ Ejemplo:
+                # box-shadow: 100px 100px 0 100px;
+        
+       ? Cuando en la propiedad box-shadow no se especifica el color, se añade el color por defecto, el cual es el negro.
+            ↓ Esta propiedad añade una sombra con el color por defecto cuando el color no se especifica (color negro)
+            #  box-shadow: 100px 100px 0;
+
+       ? En caso de que se requiera manejar sombras múltiples, lo que normalmente se pensaría es en declarar la propiedad box-shadow con distintos valores muchas veces; sin embargo, esto no es necesario, pues se pueden declarar muchas sombras dentro de la misma propiedad. Para hacer esto, sólo basta con repetir la sintaxis de la propiedad de una sombra separada por comas ( , ), como se ve en el ejemplo:
+
+       ? Ejemplo:
+       ↓ Esta propiedad añade múltiples sombras al elemento .box de distintos colores. A través de sombras múltiples, pueden realizarse efectos como el siguiente
+            #   box-shadow: 100px 100px 0 0 crimson,
+                            100px 0 darkblue,
+                            0 100px darkgoldenrod;
+
+       ? La propiedad box-shadow no sirve solamente para agregar sombras, pues, dependiendo sus valores, pueden lograrse efectos contrarios, es decir, dar brillos. 
+
+       ? Ejemplo:
+            # box-shadow: 0px 0px 15px crimson;
+                  
     */
 
-
-    /* color: crimson; */
-    /* box-shadow: 10px 10px 0 0 currentColor; */
-
-
-    /* border-radius: 50%; */
-
-    /* box-shadow: 100px 100px 0;
-    box-shadow: 100px 100px 0 100px;
-    box-shadow: 100px 100px 0 0 crimson;
-    box-shadow: 100px 100px 0 0 crimson,
-                100px 0 darkblue,
-                0 100px darkgoldenrod; */
-
-
-    /* box-shadow: 3px 2px 12px crimson; */
 }
 
+/* ! DEMOSTRACIÓN DE SOMBRAS */
+/* $ Recordatorio: se declaró esta regla con el selector body para tener un fondo un poco menos claro, para que las sombras aplicadas sean más visibles. */
 body{
     background-color: #fafafa;
 }
-/* ! PRÁCTICA */
+
 .img{
     display: block;
     width: 400px;
     margin: 30px auto;
-    /* box-shadow: 8px 8px 12px crimson; */
-    /* box-shadow: 0 20px 40px -14px rgba(0, 0, 0, .25); */
+
+    /* ? La propiedad box-shadow soporta sombras con colores escritos en sus diferentes formas; podemos usar directamente el nombre del color, y en caso de no existir, usar alguna notación como la Hexadecimal, HSL, RGB, RGBA, etc. 
+    
+       ? Ejemplo:
+       TODO: Cambiar la propiedad box-shadow para ver los distintos efectos con colores escritos de distinta forma.
+            # box-shadow: 8px 8px 12px crimson; 
+            # box-shadow: 0 20px 40px -14px rgba(0, 0, 0, .25); 
+            # box-shadow: 3px 3px 10px rgba(0, 0, 0, .75);
+    */
+
     box-shadow: 3px 3px 10px rgba(0, 0, 0, .75);
 }

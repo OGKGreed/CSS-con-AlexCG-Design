@@ -1,3 +1,6 @@
+/* ! DROP-SHADOW */
+/* TODO: Ver explicación a partir de la línea 65 */
+
 *{
     margin: 0;
     padding: 0;
@@ -58,9 +61,36 @@ body{
     display: block;
     width: 300px;
     margin: 30px auto;
-    /* drop-shadow(h-offset v-offset blur color) */
+
+
+    /* ? Cuando deseemos aplicar una sombra (o brillo) a un elemento como lo son las imágenes en formato .png, nos daremos cuenta que si aplicamos la propiedad box-shadow, esta sombra se aplicará de forma errónea.
+
+       TODO: Cambia las sombras marcadas con # para ver los efectos mencionados.
+       ? Box-shadow aplicado a una imagen .png agregará la sombra al "contenedor" de la imagen.
+
+       ? Ejemplo:
+            ↓ Esta propiedad añadirá una sombra dorada al "contenedor" de la imagen.
+            # box-shadow: 0 0 20px gold; 
+       
+       ? Por lo general, cuando queremos aplicar una sombra a una imagen de este formato, deseamos que esta se adapte a la forma de la imagen en cuestión; para esto, existe el filtro drop-shadow(). Este filtro tiene la siguiente sintaxis:
+
+       * drop-shadow(h-offset v-offset blur color)
+
+            * h-offset -> Es el desplazamiento del filtro en el eje X
+
+            * v-offset -> Es el desplazamiento del filtro en el eje Y
+
+            * blur -> Es el desvanecimiento del filtro aplicado al elemento, en este caso, una imagen .png
+
+            * color -> Es el color del filtro aplicado al elemento
+
+        ? Ejemplo:
+            ↓ Esta propiedad añadirá una sombra (o bien, un brillo en este caso) que se amoldará a la forma de la imagen .png
+            # filter: drop-shadow(0 0 20px gold);
+    */
+
     filter: drop-shadow(0 0 20px gold);
-    
+
 }
 
 .spiderman{
