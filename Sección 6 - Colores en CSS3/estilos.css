@@ -1,0 +1,245 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.title{
+    text-align: center;
+}
+
+.header{
+    padding: 45px 0;
+    color: rgb(255, 255, 255);
+    background: #000;
+    /* ! COLORES */
+    /* ? En CSS3, existen distintas formas de manejar colores. Podemos manejar colores de la siguientes maneras: 
+    
+       * Escribiendo su nombre
+       * Escribiéndolos en notación
+
+       ? Existen muchas propiedades que manejan como parámetro los colores, sin embargo, las fundamentales, son color y background.
+    */
+
+    /* $ COLORES POR NOMBRE */
+    /* ? La primera forma, y de las más comunes de usar al inicio, es escribir directamente el nombre del color, ya que de esta forma evitamos complicaciones. 
+    
+       ? Ejemplo:
+       ↓ Estas propiedades manejan colores directos
+            # color: crimson; 
+            # background: yellow;
+
+       ? En muchas ocasiones podremos encontrar el color deseado a través de un nombre. Sin embargo, no siempre será así, y es allí cuando debemos hacer uso de los colores escritos en alguna notación. Existen distintas notaciones, cada una con sus características que los distinguen de las demás.
+    */
+
+
+    
+    /* $ Colores RGB */
+    /* ? Esta notación responde a las siglas RGB, o Red-Green-Blue (Rojo-Verde-Azul). Maneja tres valores distintos que, individualmente, representa a un color en particular. El orden de escritura es primero el rojo, luego el verde y por último el azul.
+    
+       ? Para escribir un color en notación RGB en CSS3, debemos hacer uso de la función "rbg()", que aceptará los tres valores separados por comas ( , ). La notación RGB sigue la siguiente sintaxis
+       
+       * rgb(red, green, blue)
+
+       ? Estos valores pueden ir desde el 0 hasta el 255.
+
+       TODO: Copia y pega las siguientes propiedades para ver la explicación de la teoría.
+       ? Si escribimos rgb(0,0,0), obtendremos el color negro como resultado. Esto se debe a que, el 0 representa la ausencia de cada color por separado.
+       ↓ Esta propiedad da como resultado el color negro escrito en notación RGB
+            # background: rgb(0,0,0);
+    
+       ? Si escribimos rgb(255,0,0), obtendremos el color rojo.
+       ↓ Esta propiedad da como resultado el color rojo escrito en notación RGB
+            # background: rgb(255,0,0);
+            
+       ? Si escrbimos rgb(0,255,0), obtendremos el color verde.
+       ↓ Esta propiedad da como resultado el color verde escrito en notación RGB
+            # background: rgb(0,255,0);
+
+       ? Si escribimos rgb(0,0,255), obtendremos el color azul.
+       ↓ Esta propiedad da como resultado el color azul escrito en notación RGB
+            # background: rgb(0,0,255);
+
+       ? Si escribimos rgb(255, 255, 255), obtendremos el color blanco, debido a que este se obtiene de la suma de todos los colores.
+       ↓ Esta propiedad da como resultado el color blanco escrito en notación RGB
+            # background: rgb(255, 255, 255);
+
+       ? Cuando combinamos valores, podemos obtener colores compuestos, resultado de la combinación de valores entre rojo, verde y azul.
+
+       ? Ejemplo:
+       TODO: Copia y pega las siguientes propiedades para ver los cambios de colores en notación RGB.
+            # color: rgb(65, 172, 44);
+            # color: rgb(104, 71, 167);
+            # color: rgb(216, 231, 14);
+            # color: rgb(255, 255, 255);
+
+    */
+    
+
+
+
+    /* $ Colores RGBA */
+    /* ? Existen una variante de la notación RGB, que es la RGBA. Esta notación añade un cuarto parámetro a diferencia de la notación RGB, el Alpha.
+    
+    ? Alpha, también conocido como "transparencia", es el parámetro que añade o quita un nivel de transparencia al color en cuestión. Este parámetro puede ir desde el 0 hasta el 1, representando porcentajes.
+    
+    TODO: Copia y pega las siguientes propiedades para ver la explicación de la teoría.
+    ? Si escribimos un color con alpha, o transparencia 1, obtendremos el color sin ninguna transparencia.
+    ↓ Esta propiedad da como resultado un tono de morado con una transparencia nula
+        # background: rgba(78,14,138,1 );
+
+    ? Si escribimos un color con un alpha o transparencia entre el 0 y el 1, obtendremos el color con una transparencia parcial que dependerá del porcentaje aplicado.
+    ↓ Esta propiedad da como resultado un tono de morado con una transparencia del 60%
+        # background: rgba(78,14,138,0.6 );
+
+    ? Si escribimos un color con alpha o transparencia 0, obtendremos un color con una transparencia total; es igual que usar el color transparent.
+    ↓ Esta propiedad da como resultado un tono de morado con una trasparencia total.
+        # background: rgba(78,14,138,0 );
+
+    ? Ejemplo de colores en notación RGBA
+    TODO: Copia y pega las siguientes propiedades para ver los cambios de colores en notación RGBA.
+        # background: rgba(226, 14, 14, 0.525);
+        # background: rgba(167, 222, 115, 0.741);
+        # background: rgba(150, 146, 222, 0.699);
+        # background: rgba(255, 187, 0, 0.938);
+    */
+    
+
+
+    /* $ COLORES HEX */
+    /* ? Esta notación describe a los colores, al igual que la notación RGB, valores entre Rojo-Verde-Azul desde el 0 al 255, pero escrito en Hexadecimal. Estos se distinguen fácilmente porque siempre van escritos con un # al inicio y porque suelen combinar números del 0 al 9 y letras de la A a la F.
+    
+    ? Podemos encontrar colores escritos en esta notación de dos formas:
+    
+        * Hexadecimal abreviada -> Los colores escritos en esta forma sólo tienen 3 parámetros. Ejemplo:
+            #000
+
+        * Hexadecimal completa -> Los colores escritos en esta forma tienen 6 parámetros declarados. Ejemplo:
+            #000000
+    
+    ? La diferencia entre estas dos formas de encontrar colores hexadecimales, es que la notación abreviada va con valores del 0 al 240, y la notación completa del 0 al 255.
+    TODO: Ver imagen Hexadecimal.png para ver la tabla de valores y explicación gráfica.
+    
+    $ Recordatorio: Todos estos valores se obtienen de la siguiente forma:
+
+        $ Hexadecimal abreviado -> Estos valores se obtienen de la multiplicación de los valores desde el 0 hasta el 15, multiplicados por la base, que en este caso es 16. Como máximo, obtendremos 240.
+
+        $ Hexadecimal completo -> Realizamos la misma multiplicación de antes, y para obtener el valor restante, deberemos sumar a los 240 obtenidos un valor desde el 0 hasta el 15, dando como resultado el 255 máximo que podemos obtener.
+
+    TODO: Copia y pega las siguientes propiedades para ver la explicación de la teoría.
+    ? Si escribimos #f00, obtendremos un rojo con un valor de 240.
+    ↓ Esta propiedad da como resultado un rojo, pero hay que tener en cuenta que no es un rojo al 100%
+        # background: #f00;
+
+    ? Si escribimos #0f0, obtendremos un verde con un valor de 240.
+    ↓ Esta propiedad da como resultado un verde, pero hay que tener en cuenta que no es un verde al 100%
+        # background: #0f0;
+
+    ? Si escribimos #00f, obtendremos un azul con un valor de 240.
+    ↓ Esta propiedad da como resultado un azul, pero hay que tener en cuenta que no es un azul al 100%
+        # background: #00f;
+
+    ? Si escribimos #ff0000, obtendremos un rojo con un valor de 255.
+    ↓ Esta propiedad da como resultado un rojo al 100%
+        # background: #ff0000;
+
+    ? Si escribimos #00ff00, obtendremos un verde con un valor de 255.
+    ↓ Esta propiedad da como resultado un verde al 100%
+        # background: #00ff00;
+    
+    ? Si escribimos #0000ff, obtendremos un azul con un valor de 255.
+    ↓ Esta propiedad da como resultado un azul al 100%
+        # background: #0000ff;
+    
+    ? Si escribimos #000000, obtendremos el color negro.
+    ↓ Esta propiedad da como resultado el color negro al 100%
+        # background: #000000;
+
+    ? Si escribimos #ffffff, obtendremos el color blanco.
+    ↓ Esta propiedad da como resultado el color blanco al 100%
+        # background: #ffffff;
+
+
+    ? Ejemplo de colores en notación hexadecimal
+        # background: #f02424;
+        # background: #24f046;
+        # background: #8496fa;
+        # background: #ff4d00;
+
+    ! NOTA: LOS COLORES EN NOTACIÓN HEXADECIMAL TAMBIÉN PUEDEN SOPORTAR TRANSPARENCIAS (ALPHA), QUE ESTARÁN ESCRITAS DE IGUAL FORMA ENTRE VALORES DEL 0 AL 255 EN NOTACIÓN HEXADECIMAL, SUMANDO ASÍ UN TOTAL DE 4 PARÁMETROS U 8 VALORES.
+
+    ? Ejemplo de colores en notación hexadecimal con transparencias
+        # background: #fbff00c9;
+        # background: #a9e2fd67;
+        # background: #bc283ce1;
+        # background: #0ec3478d;
+    */
+    
+
+
+    /* $ COLORES HSL */
+    /* ? Los colores escritos en notación HSL se manejan entre una mezcla de valores que van desde el 0 hasta el 360 y porcentajes del 0% al 100%. Esta notación sigue la siguiente sintaxis.
+
+        * hsl(hue, saturation, lightness)
+
+            ↓ Se deben escribir como valores numéricos entre el 0 y el 360
+            * hue (tono) -> Determina qué color del espectro es. El valor corresponde a un ángulo de la rueda de color en la imagen hsl-color-model.png.
+
+            ↓ Se deben escribir como porcentajes
+            * saturation (saturación) -> Indica la intensidad de un tono concreto. Los valores van del 0 al 100%, siendo el 0% la saturación mínima y el 100% la saturación máxima.
+
+            * lightness (iluminosidad) -> La iluminosidad hace referencia a cuán claro u oscuro es un color. Dará como resultado una versión más clara o oscura del tono escogido.
+
+            source: https://desarrolloweb.com/articulos/notacion-colores-css.html#:~:text=Notaci%C3%B3n%20de%20color%20con%20porcentajes,obtendr%C3%ADamos%20cualquier%20matiz%20de%20color.
+
+       $ Saturation
+       ? Entre más grande sea el valor, más se acerca al color deseado en el hue
+       ? Entre más pequeño sea el valor, más se acerca al gris
+
+       $ Lightness
+       ? Entre más grande sea el valor, más se acerca al color blanco
+       ? Entre más pequeño sea el valor, más se acerca al color negro
+       
+    TODO: Copia y pega las siguientes propiedades para ver la explicación de la teoría.
+    ? Si escribimos (0, 100%, 50%), obtendremos el color rojo
+    ↓ Esta propiedad define al color rojo en notación HSL
+        # background: hsl(0, 100%, 50%);
+        
+    ? Si escribimos (120, 100%, 50%), obtendremos el color rojo
+    ↓ Esta propiedad define al color rojo en notación HSL
+        # background: hsl(120, 100%, 50%);
+
+    ? Si escribimos (240, 100%, 50%), obtendremos el color rojo
+    ↓ Esta propiedad define al color rojo en notación HSL
+        # background: hsl(240, 100%, 50%);
+
+    ? Si escribimos (0, 0%, 100%), obtendremos el color rojo
+    ↓ Esta propiedad define al color rojo en notación HSL
+        # background: hsl(0, 0%, 100%);
+
+    ? Si escribimos (0, 0%, 0%), obtendremos el color rojo
+    ↓ Esta propiedad define al color rojo en notación HSL
+        # background: hsl(0, 0%, 0%);
+
+    TODO: Copia y pega las siguientes propiedades para ver los cambios de colores en notación HSL.
+    # background: hsl(180, 40%, 20%);
+    # background: hsl(135, 78%, 64%);
+    # background: hsl(41, 98%, 53%);
+    # background: hsl(257, 87%, 57%);
+    */
+
+
+
+    /* $ COLORES HSLA */
+    /* ? Al igual que el resto de notaciones, HSL también puede soportar transparencias, dando lugar a la notación HSLA.
+
+    TODO: Copia y pega las siguientes propiedades para ver los cambios de colores en notación HSLA.
+    # background: hsla(119, 62%, 51%, 0.816);
+    # background: hsla(261, 100%, 89%, 0.5);
+    # background: hsla(63, 93%, 48%, 0.961);
+    # background: hsla(0, 49%, 53%, 0.15);
+    */
+    
+}
+
+
