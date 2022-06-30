@@ -1,0 +1,239 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ! PARTE 1: BACKGROUND */
+/* ? La propiedad background es un shorthand que incluye muchas propiedades, cada una especificamente para dar o cambiar un valor en especial.*/
+.container{
+    width: 70%;
+    height: 300px;
+    background: rgb(100, 100, 250);
+    margin: 30px auto;
+
+    /* $ Background para color */
+    /* ? Para cambiar especificamente el color de un fondo, usamos background-color.*/
+    /* background-color: transparent; */
+    /* background-color: rgb(100, 100, 250); */
+
+    /* $ Background para imagenes */
+    /* ? Para añadir una imagen como fondo, usamos background-image. 
+    
+       ? Esta propiedad hace uso de la función url(), donde como parámetro, debemos especificar la ruta de la imagen que deseamos usar como fondo.
+    
+       ? En caso que deseemos usar más de una imagen como fondo con la propiedad background-image, debemos añadir de nueva cuenta la función url() con la ruta de la imagen que deseamos usar. No se debe especificar de nueva cuenta la propiedad background-image, pues, por cascada, la última imagen añadida reemplazará a la anterior, dando lugar a que solo una imagen sea visible.
+
+    ? */
+    /* TODO: Comenta/descomenta esta propiedad ↓ para ver el uso de imágenes como fondo. */
+    /* background-image: url(img/spidy.png); */
+
+    /* TODO: Comenta/descomenta esta propiedad ↓ para ver el uso de imágenes múltiples como fondo. */
+    /* ↓ Esta propiedad establece dos imágenes como fondo en lugar de una, cada una separada por comas con su respectiva función url() */
+    /* background-image: url(img/spidy.png), url(img/sun.png); */
+    
+    /* $ Repetir imágenes */
+    /* ? Normalmente, cuando añadimos una imagen con la propiedad background-image, si esta es muy pequeña se repetirá por todo el ancho y alto de su contenedor. Esto se debe a la propiedad background-repeat, que por defecto, tiene como valor "repeat", haciendo que la imagen en cuestión se repita muchas veces. */
+
+    /* TODO: Comenta/descomenta esta propiedad ↓ para usar la imagen cloud.png en los siguientes ejemplos. */
+    /* ↓ Establecemos una imagen de fondo */
+    /* background-image: url(img/cloud.png); */
+
+     /* TODO: Comenta/descomenta las siguientes propiedades ↓ para ver la explicación. */
+    /* ↓ Valor por defecto de la propiedad background-repeat */
+    /* background-repeat: repeat; */
+
+    /* ? Si deseamos tener nuestra imagen una única vez dentro de su contenedor, debemos cambiar el valor de background-repeat a "no-repeat". */
+    /* background-repeat: no-repeat; */
+
+    /* ? En caso de desear que nuestra imagen se repita, podemos controlar la dirección de esta repetición, ya sea por el eje X con el valor "repeat-x" o por el eje Y con "repeat-y". Si lo que queremos conseguir es repetir la imagen en ambos ejes, debemos dejar el valor "repeat". */
+    /* background-repeat: repeat-x; */
+    /* background-repeat: repeat-y; */
+
+    /* ! NOTA: TENER CUIDADO CON LA PROPIEDAD BACKGROUND, PUES AL SER UN SHORTHAND ENGLOBA LAS PROPIEDADES COLOR, IMAGE, REPEAT, ETC., Y SI SE VUELVE A DEFINIR, TODOS LOS VALORES ANTERIORES SE RESETEARÁN.SI SE DESEA CAMBIAR UN VALOR DERIVADO DE BACKGROUND, DEBE USARSE LA PROPIEDAD ESPECÍFICA DEL VALOR DESEADO, POR EJEMPLO, USAR BACKGROUND-COLOR PARA CAMBIAR EL COLOR EN LUGAR DEL SHORTHAND.*/
+    
+    /* ! ↓ No usar background después de haber establecido valores específicos de background anteriormente */
+    /* background: steelblue; */
+    /* ↓ Usar propiedades especificas derivadas del shorthand para cambiar valores específicos */
+    /* background-color: steelblue; */
+    
+}
+
+/* ? Podemos crear patrones con background-repeat: repeat; */
+/* TODO: Comentar/descomentar esta regla para ver el patrón creado con la imagen textura.png */
+/* body{
+    background-image: url(img/textura.png);
+    background-repeat: repeat;
+} */
+
+
+
+.container{
+    /* TODO: Descomentar las propiedades background-repeat y margin para ver las siguientes explicaciones */
+    /* background-repeat: no-repeat;
+    margin: 30px auto; */
+
+    /* $ Background position */
+    /* ? La propiedad background-position sirve para posicionar una imagen de fondo. Esta propiedad tiene la siguiente sintaxis:
+
+        * background-position: x y;
+
+            * x -> El primer valor asigna un desplazamiento en el eje X.
+
+            * y -> El segundo valor asigna un desplazamiento en el eje Y.
+
+            $ Recordatorio: en CSS, el eje Y se maneja distinto al plano cartesiano; los valores positivos desplazarán el fondo hacia abajo, y los negativos hacia arriba.
+
+    ? */
+
+    /* TODO: Comentar/descomentar para ver las siguientes explicaciones */
+    /* ↓ Esta propiedad posiciona el fondo en el eje X hacia la derecha y eje Y hacia abajo */
+    /* background-position: 30px 100px; */
+     /* ↓ Esta propiedad posiciona el fondo en el eje X hacia la izquierda y eje Y hacia arriba */
+    /* background-position: -30px -20px; */
+
+    /* ? De igual forma, en lugar de manejar medidas, podemos usar palabras reservadas para posicionar específicamente en un área concreta a nuestro fondo. Estas palabras son:
+    
+        * top -> Posicionará el fondo hacia arriba
+
+        * right -> Posicionará el fondo hacia la derecha
+
+        * left -> Posicionará el fondo hacia la izquierda
+
+        * bottom -> Posicionará el fondo hacia abajo
+
+        * center -> Posicionará el fondo en el centro
+
+        ! IMPORTANTE: PUEDE MANEJAR HASTA 2 DE ESTAS PALABRAS RESERVADAS
+    */
+
+    /* TODO: Comentar/descomentar para ver los ejemplos de background-position */
+    /* background-position: top right; */
+    /* background-position: bottom right; */
+    /* background-position: bottom left; */
+    /* background-position: top left; */
+    /* background-position: top center; */
+    /* background-position: center right; */
+    /* background-position: bottom center; */
+    
+    /* ? Podemos combinar el posicionamiento de fondos con medidas y palabras reservadas. Hay que tener en cuenta que al usar esta notación, las palabras reservadas que usemos empujarán el fondo hacia el lado contrario. 
+    
+        * top + medida -> Empujará el fondo en la medida especificada a partir del top
+
+        * bottom + medida -> Empujará el fondo en la medida especificada a partir del bottom
+
+        * right + medida -> Empujará el fondo en la medida especificada a partir del right
+
+        * left + medida -> Empujará el fondo en la medida especificada a partir del left
+    
+    */
+
+    /* TODO: Comentar/descomentar para ver los ejemplos de background-position */
+    /* background-position: top 70px right 40px; */
+    /* background-position: bottom 170px left 50px; */
+    /* background-position: top 255px left 100px; */
+    
+
+    /* TODO: Comentar el background-image de cloud.png y descomentar spidy.png para ver las siguientes explicaciones. */
+    /* background-image: url(img/spidy.png);
+    background-position: center; */
+
+    /* $ Background size */
+    /* ? La propiedad background-size establece las proporciones en los ejes X y Y; en resumen, actúan como width y height. Esta propiedad usa la siguiente sintaxis:
+    
+        * background-size: x y;
+
+            * x -> Establece la medida en el eje X
+
+            * y -> Establece la medida en el eje Y
+
+    ? */
+    /* ↓ Esta propiedad establece 300px en el eje X y 200px en el eje Y a la imagen de fondo */
+    /* background-size: 300px 200px; */
+
+    /* ? Si establecemos una sola medida, esta se aplicará a ambos ejes. */
+    /* ↓ Esta propiedad establece medidas en el eje X y Y de 200px a la imagen de fondo */
+    /* background-size: 200px; */
+
+    /* ? Esta propiedad también puede manejar palabras reservadas, las cuales son:
+    
+        $ contain -> Este valor escala la imagen de fondo al mayor tamaño posible sin recortar ni estirar la imagen. Como resultado, obtendremos un reescalado acorde al tamaño del elemento.
+
+        $ cover -> Este valor escala la imagen de fondo sin estirar pero recortando el espacio restante del elemento, haciendo que la imagen ocupe casi todo el elemento. Como resultado, obtendremos un reescalado casi ideal para el tamaño del elemento pero con una imagen más grande.
+    
+    ? */
+    /* background-size: contain; */
+    /* background-size: cover; */
+
+    /* TODO: Comentar las propiedades background-repeat y margin antes de pasar a la siguiente explicación. */
+}
+
+
+/* ! PARTE 2: BACKGROUND ATTATCHMENT */
+/* TODO: Descomentar las regla .body, .atachment #1 y .title #1 para ver la explicación de Background-attachment */
+/* body{
+    display: flex;
+    justify-content: space-evenly;
+} */
+/* $ .atachment #1 */
+.atachment{
+    /* width: 40%;
+    height: 400px;
+    background-image: url(img/img-hero.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; */
+
+    /* margin-top: 100px; */
+}
+
+/* $ .title #1 */
+/* .title{
+    font-size: 70px;
+    font-family: 'Arial';
+    text-align: center;
+    color: #fff;
+    margin-top: 100px;
+} */
+
+.fixed{
+
+    /* $ Background-attachment */
+    /* ? La propiedad background-attachment sirve para determinar la posición de la imagen cuando haya presencia de un scroll en el body. Esta propiedad soporta los siguientes valores: 
+    
+        * scroll -> Es el valor inicial (por defecto); hace que la imagen de fondo se mueva junto a su contenedor al scrollear
+
+        * fixed -> Hace que la imagen quede fija y sólo se mueva su contenedor. Sirve para hacer el efecto Parallax.
+    
+        ! NOTA: FIXED HACE QUE EL FONDO SE QUEDE FIJO Y AUMENTA SU ESCALADO DEBIDO A QUE INTERPRETA QUE EL FONDO TENDRÁ EL 100% DEL WIDTH Y HEIGHT VISIBLE DEL NAVEGADOR.
+
+    ? */
+
+    /* background-attachment: fixed; */
+
+}
+
+/* ? Añadimos un height de 3000px para tener un scroll. */
+/* .space{
+    height: 3000px;
+} */
+
+/* TODO: Descomenta las reglas .atachment #2 y .title #2 para ver el efecto Parallax adecuadamente (con el 100% de width y height de la imagen de fondo) */
+/* ! IMPORTANTE: COMENTAR EL MARGIN-TOP EN .atachment #1, LA REGLA .body EN LA PARTE 2 PARA VER EL EFECTO PARALLAX  */
+/* $ .atachment #2 */
+/* .atachment{
+    width: 100%;
+    height: 100vh;
+} */
+
+/* $ .title #2 */
+/* .title{
+    margin-top: 400px;
+} */
+
+/* ! Regla para arreglar el colapsado de márgenes */
+/* $ ARREGLAMOS EL COLAPSO DE MÁRGENES ENTRE EL PADRE .atachment #1 Y EL HIJO .title #2 con padding */
+/* .atachment{
+    padding: 0.1px;
+} */
+
