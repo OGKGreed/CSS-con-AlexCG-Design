@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ! PARTE 1: GRADIENTES */
+.container{
+    width: 80%;
+    height: 400px;
+    margin: 30px auto;
+    background: steelblue;
+
+    /* ? Para usar gradientes, debemos usdar la función linear-gradient(). Esta función tiene la siguiente sintaxis:  
+    
+        * background-image: linear-gradient(direction, color stop, color stop);
+
+        * direction -> Hace referencia a la dirección en la que el gradiente se mostrará.
+
+        * color -> Acepta como parámetro un color en cualquier notación.
+
+        * stop -> Representa una medida hasta la que se reproducirá el color especificado en porcentaje.
+
+        ! NOTA: ES IMPORTANTE USAR ESTA FUNCIÓN CON BACKGROUND-IMAGE, PUES SI USAMOS EL SHORTHAND DE BACKGROUND, REEMPLAZAREMOS LOS VALORES ESTABLECIDOS PREVIAMENTE A LA FUNCIÓN LINEAR-GRADIENT().
+    
+    */
+
+    /* $ Colores de un gradiente */
+    /* ? Para hacer uso de esta función, como mínimo, necesitamos establecer dos colores que compongan al gradiente o degradado. */
+    /* # background-image: linear-gradient(crimson, steelblue); */
+    
+    /* ? linear-gradient() acepta más de dos colores, formando así una variedad de colores en los gradientes. */
+    /* # background-image: linear-gradient(crimson, steelblue, orange, blue, brown);  */
+
+    /* $ Direcciones de un gradiente */
+    /* ? Para hacer uso de las direcciones, debemos usar la palabra reservada "to" seguido de la palabra reservada de la dirección, al inicio de los parámetros de la función. */
+
+    /* ↓ Usando dirección to top */
+    /* # background-image: linear-gradient(to top, crimson, pink); */
+
+    /* ↓ Usando dirección to bottom */
+    /* # background-image: linear-gradient(to bottom, crimson, pink); */
+
+    /* ↓ Usando dirección to left */
+    /* # background-image: linear-gradient(to left, crimson, pink); */
+
+    /* ↓ Usando dirección to right */
+    /* # background-image: linear-gradient(to right, crimson, pink);  */
+
+    /* ! NOTA: LA DIRECCIÓN POR DEFECTO DE UN GRADIENTE ES to bottom. */
+
+
+    /* ? De igual forma, podemos formar direcciones hacia las esquinas creando direcciones compuestas con dos palabras reservadas de dirección. */
+
+    /* ↓ Creando un gradiente que va hacia la esquina superior izquierda del color 1 al 2 */
+    /* # background-image: linear-gradient(to top left, crimson, steelblue); */
+
+    /* ↓ Creando un gradiente que va hacia la esquina superior derecha del color 1 al 2  */
+    /* # background-image: linear-gradient(to top right, crimson, steelblue); */
+
+    /* ↓ Creando un gradiente que va hacia la esquina inferior derecha del color 1 al 2  */
+    /* # background-image: linear-gradient(to bottom right, crimson, steelblue); */
+
+    /* ↓ Creando un gradiente que va hacia la esquina inferior izquierda del color 1 al 2  */
+    /* # background-image: linear-gradient(to bottom left, crimson, steelblue);  */
+
+
+    /* ? Por último, podemos crear direcciones con grados especificando los grados deseados junto a la palabra reservada deg. */
+    /* ↓ Creando un gradiente con una inclinación de 10 grados del color 1 al 2 */
+    /* # background-image: linear-gradient(10deg, crimson, steelblue); */
+
+    /* ↓ Creando un gradiente con una inclinación de 90 grados del color 1 al 2 */
+    /* # background-image: linear-gradient(90deg, crimson, steelblue); */
+
+    /* ↓ Creando un gradiente con una inclinación de 180 grados del color 1 al 2 */
+    /* # background-image: linear-gradient(180deg, crimson, steelblue); */
+
+    /* ↓ Creando un gradiente con una inclinación de 270 grados del color 1 al 2 */
+    /* # background-image: linear-gradient(270deg, crimson, steelblue); */
+
+    /* ↓ Creando un gradiente con una inclinación de 120 grados del color 1 al 2 */
+    /* # background-image: linear-gradient(120deg, crimson, steelblue); */
+
+
+    /* $ Stops de un gradiente */
+    /* ? Para usar un stop, debemos especificar apartir de qué porcentaje del tamaño del elemento se empezará a reproducir el color. */
+
+    /* ? EJEMPLO:
+
+       ↓ En este degradado se estableció el primer color hasta el 50% del elemento y el segundo color hasta el 60% del elemento. Entre los porcentajes que se ubican entre 50% y 70% es donde se hará un degradado.
+       # background-image: linear-gradient(crimson 50%, steelblue 70%);
+
+       ↓ En este otro ejemplo, se estableció que el primer color se reproducirá hasta el 30% del tamaño del elemento y el segundo color hasta el 80% del tamaño del elemento. Entre el 30% y el 80% del tamaño del elemento, se hará un degradado del color 1 hasta el color 2.
+       # background-image: linear-gradient(crimson 30%, steelblue 80%);
+
+       ! NOTA: EN CASO DE QUE LOS STOPS SEAN DE IGUAL PORCENTAJE, NO EXISTIRÁ UN GRADIENTE O DEGRADADO Y SÓLO SE REPRODUCIRÁN LOS COLORES SÓLIDOS.
+    ? */
+
+}
+
+/* ! PARTE 2: APLICACIÓN DE GRADIENTES EN IMÁGENES */
+.header{
+    /* $ Regla para arreglar el colapsado de márgenes <header> y el <h1> */
+    padding: 0.1px;
+
+    height: 800px;
+
+    /* ? Podemos aplicar un gradiente a una imagen traída con background-image si la función linear-gradiente() se establece primero. 
+    
+    ? Para hacer esto, primero se establece la función linear-gradient() y luego la función url() separada por comas.
+    
+    ! NOTA: PARA ESTABLECER UN GRADIENTE EN UNA IMAGEN, ES IMPORTANTE QUE LOS COLORES TENGAN APLICADOS UNA TRANSPARENCIA. DE PREFERENCIA, QUE ESTA SEA DEL 50%.
+    ? */
+    background-image: linear-gradient(#00008b83, #4683b484), url(img/hero.jpg);
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.title{
+    font-size: 60px;
+    text-align: center;
+    margin-top: 270px;
+    color: #fff;
+    font-family: 'Arial';
+}
