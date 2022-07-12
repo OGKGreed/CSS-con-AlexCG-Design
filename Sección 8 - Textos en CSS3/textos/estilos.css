@@ -1,0 +1,361 @@
+/* ! API DE GoogleFonts CON @import url() DESDE CSS*/
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #9ab1f6;
+}
+
+.container{
+    background: #fff;
+    width: 70%;
+    margin: 30px auto;
+    box-shadow: 3px 3px 10px rgba(0,0,0, .2);
+    
+    text-align: center;
+    
+    /* TODO: Descomentar para ver truco de alineación vertical con line-height */
+    /* height: 500px; */
+    /* TODO: Comentar para ver truco de alineación vertical con line-height */
+    padding: 20px;
+}
+
+/* ! TEXTOS */
+.h1{
+    /* $ Text-align */
+    /* ? La propiedad text-align sirve para alinear a los textos. Esta propiedad puede manejar distintos valores dados por palabras reservadas. */
+
+    /* ↓ Alinear el texto a la izquierda */
+    /* # text-align: left; */
+
+    /* ↓ Alinear el texto a la derecha */
+    /* # text-align: right; */
+
+    /* ↓ Alinear el texto al centro */
+    /* # text-align: center;  */
+
+    /* ? Esta propiedad de igual forma puede servir para alinear imágenes si el elemento <img> está contenido por un elemento padre al que se le aplique text-align. 
+    
+       $ (Ver text-align en .container)
+       
+       ! NOTA: LA CONDICIÓN PARA ALINEAR TEXTOS (Y OTROS ELEMENTOS) ES QUE SEAN ELEMENTOS DE BLOQUE.
+       TODO: ver la regla del elemento <a> y analizar sus propiedades.
+    ? */
+
+
+    /* TODO: Descomentar para ver truco de alineación vertical con line-height */
+    /* line-height: 500px; */
+}
+
+.img{
+    width: 250px;
+}
+
+/* ↓ Para alinear a los elementos <a>, aplicamos display: block para que text-align funcione. */
+/* a{
+    display: block;
+    text-align: left;
+} */
+
+.copy{
+    padding: 10px 0;
+
+    /* $ Recordatorio: no se recomienda usar text-align: justify debido a que este suele dejar espacios muy grandes entre las palabras si el contenedor es muy grande, dando un mal aspecto visual a los textos. */
+    /* # text-align: justify; */
+
+    /* $ Letter-spacing */
+    /* ? Esta propiedad sirve para establecer un espaciado entre letras de un texto. Puede manejar tanto medidas positivas como negativas.*/
+    /* # letter-spacing: 50px; */
+    /* # letter-spacing: -4px; */
+    /* # letter-spacing: -1px; */
+
+    /* $ Word-spacing */
+    /* ? Esta propiedad tiene un comportamiento similar a letter-spacing; lo que lo distingue, es que el espaciado se aplica entre palabras completas en lugar de cada letra de una palabra en un texto. 
+    
+       ? De igual forma, esta propiedad puede manejar tanto medidas positivas como negativas.
+
+    ? */
+    /* # word-spacing: 30px; */
+    /* # workd-spacing: -4px; */
+    /* # word-spacing: -8px;  */
+
+    /* $ Text-shadow */
+    /* ? Esta propiedad es muy similar a box-shadow; está especialmente enfocada a aplicar sombras a los textos en lugar de al contenedor de un elemento. La sintaxis de esta propiedad es la siguiente:
+    
+        * text-shadow: offset-x offset-y blur color;
+
+            * offset-x -> representa el desplazamiento horizontal, o sea, en el eje X.
+
+            * offset-y -> representa el desplazamiento vertical, o sea, en el eje Y.
+
+            * blur -> representa un desvanecimiento.
+
+            * color -> representa el color de la sombra aplicada al texto; puede manejarse en cualquier notación.
+    ? */
+    /* # text-shadow: 3px 3px 6px rgba(0,0,0, .5); */
+
+    /* ? Al igual que box-shadow, text-shadow crea una sombra igual al elemento al que se le aplica, que en este caso es un texto. De esta forma, podemos realizar duplicados de texto sólo aplicando desplazamientos verticales y horizontales. */
+    /* # text-shadow: 10px 10px;  */
+
+    /* $ Text-transform */
+    /* ? La propiedad text-transform, como su nombre dice, hace una transformación del texto. Por defecto, tiene el valor none, que significa que no aplicará ningún tipo de transformación al texto. Los valores de transformación que soporta son los siguientes:
+    
+        * upprcase -> Este valor transformará a todo el texto al que se aplique, haciendo que el texto se transforme a una versión de sí mismo pero en completas mayúsculas.
+            # text-transform: uppercase;
+
+        * lowercase -> Este valor transformará a todo el texto al que se aplique, haciendo que el texto se transforme a una versión de sí mismo pero en completas minúsculas.
+            # text-transform: lowercase;
+
+        * capitalize -> Este valor transforma el texto al que se le aplique modificando la inicial de cada palabra dentro del texto, haciendo que las iniciales sean mayúsculas.
+            # text-transform: capitalize;
+
+    ? */
+
+    /* $ Line-height */
+    /* ? Esta propiedad sirve para establecer un alto entre líneas. Acepta sólo medidas positivas, aunque de igual forma se pueden especificar unidades sin una medida (o sea, un escalar). */
+    /* # line-height: 70px; */
+
+    /* ! Dato curioso */
+    /* ? Line-height tiene un comportamiento distinto al normal cuando se aplican unidades escalares y existe un font-size asignado; si aplicamos un font-size: 14px, y posteriormente un line-height: 3, esta altura línea de 3 será especial y única para el tamaño de letra, que en este caso es 14px. 
+    
+    ? Si el tamaño cambia, ya sea que aumente o disminuya, el line-height será distinto a pesar de que tenga el mismo valor asignado.*/
+}
+
+.enlace{
+    color: black;
+    
+
+    /* $ Text-decoration */
+    /* ? Esta propiedad es un shorthand que maneja los siguientes parámetros:
+
+        * text-decoration: line style color;
+
+            * line -> Generalmente las decoraciones suelen ser líneas; en este parámetro se especifica la línea que queremos usar como decoración. 
+            ? Esta parámetro se desglosa en su propiedad específica text-decoration-line.
+
+            * style -> Define el estilo de la línea usada como decoración.
+            ? Este parámetro se desglosa en su propiedad específica text-decoration-style.
+
+            * color -> Define el color de la línea aplicada como decoractión. Acepta cualquier notación de color.
+            ? Este parámetro se deslosa en su propiedad específica text-decoration-color.
+
+       ? Ejemplo:
+       # text-decoration: underline solid crimson;
+
+    ? */
+
+    /* $ Text-decoration-line */
+    /* ? Text-decoration-line es la propiedad específica derivada de text-decoration que se encarga de añadir una línea como decoración. Los valores que puede soportar esta propiedad son los siguientes:
+    
+        * underline -> Es el valor por defecto de esta propiedad; define una línea en la parte inferior del elemento al que se le aplique. Es como un efecto de subrayado.
+            # text-decoration-line: underline;
+
+        * overline -> Define una línea en la parte superior del elemento al que se aplique la propiedad.
+            # text-decoration-line: overline;
+
+        * line-through -> Este valor "subraya" el texto por la mitad, dando un efecto de tachado.
+            # text-decoration-line: line-through;
+
+        * none -> Este valor quita las líneas de decoración.
+            # text-decoration-line: none;
+
+       ? Con esta propiedad, podemos definir combinaciones con estos valores, dando efectos como los siguientes:
+
+       ↓ Esta propiedad define una línea en la parte superior del elemento y otro en medio del elemento <a>
+       # text-decoration-line: line-through overline;
+
+       ↓ Esta propiedad define una línea extra en la parte inferior del elemento <a>, dando así un total de 3 líneas aplicadas.
+       # text-decoration-line: line-through overline underline;
+
+    ? */
+    
+    /* $ Text-decoration-style */
+    /* ? Esta propiedad específica se deriva del shorthand text-decoration; se encarga de darle un estilo único a las líneas agregadas en el parámetro line. Esta propiedad soporta los siguientes valores: 
+    
+        * solid -> Este valor hace que la línea sea sólida; en otras palabras, es una línea normal y corriente sin modificaciones.
+            # text-decoration-style: solid;
+
+        * double -> Este valor agrega una línea más de tipo solid; en otras palabras, agrega una doble línea al elemento en cuestión.
+            # text-decoration-style: double;
+
+        * dotted -> Este valor modifica la línea especificada en el parámetro line, haciendo que su aspecto sea punteado; en otras palabras, es una línea hecha con puntos.
+            # text-decoration-style: dotted;
+        
+        * dashed -> Este valor es similar al dotted. En lugar de hacer una línea con puntos, hace una línea hecha con líneas más pequeñas; en otras palabras, hace una línea salteada.
+            # text-decoration-style: dashed;
+
+        * wavy -> Este valor da un aspecto curvo a la línea especificada en el parámetro line, haciendo que la línea sea ondulada.
+            # text-decoration-style: wavy;
+    */
+    
+    /* $ Text-decoration-color */
+    /* ? Esta propiedad específica se derivada del shorthand text-decoration; se encarga de añadir o modificar el color de la línea especificada en el parámetro line. Soporta cualquier notación de colores. 
+    
+       ? Ejemplo: 
+       # text-decoration-color: crimson;
+
+    ? */
+
+    text-decoration: none;
+    border: 1px solid;
+    color: crimson;
+    display: inline-block;
+    padding: 10px 25px;   
+}
+
+.copy{
+    /* $ Font (fuentes) */
+    /* ? Esta propiedad es un shorthand que engloba muchos valores de distintos tipos. 
+       # font: ;
+
+    ? Como sintaxis que maneja este shorthand, usa los siguientes parámetros, que a su vez, también se desglozan en propiedades específicas: 
+    
+        * font: font-style font-variant font-weight font-size line-height font-family
+
+            * font-style -> Es la propiedad específica que se encarga de definir el estilo de la fuente usada.
+
+            * font-variant -> Es la propiedad específica encargada de establecer variantes de la fuente usada. 
+
+            * font-weight -> Es la propíedad específica que se encarga de definir el grosor de la fuente usada.
+
+            * font-size -> Es la propiedad específica que se encarga de establecer el tamaño de la fuente usada.
+
+            * line-height -> Establece un alto entre líneas.
+
+            * font-family -> Es la propiedad específica que se encarga de establecer el tipo de fuente que se va a usar.
+    
+    */
+
+    /* $ Font-variant */
+    /* ? Esta propiedad específica establece variantes de la fuente definida; esta propiedad soporta únicamente dos valores.
+    
+        * normal -> Es el valor por defecto; si se aplica, no se verá ningún cambio debido a que no aplica alguna variante a la fuente usada.
+            # font-variant: normal;
+
+        * small-caps -> Este valor crea una variante de mayúsculas con un tamaño de fuente reescalado del texto al que se aplique. Tiene un aspecto similar a los estilos de la etiqueta <acronym>.
+            # font-variant: small-caps;
+        ! NOTA: SI LA FUENTE NO CUENTA CON LA VARIANTE small-caps, EL NAVEGADOR CREARÁ UNA FUENTE PROPIA TRATANDO DE IMITAR LA FUENTE USADA Y LOS TAMAÑOS DE FUENTE QUE CORRESPONDERÍAN A LA FUENTE.
+
+        ? Para saber más de esta propiedad, ver los siguientes enlaces.
+        source: https://developer.mozilla.org/es/docs/Web/CSS/font-variant
+        source: https://uniwebsidad.com/libros/referencia-css2/font-variant
+    
+    ? */
+
+    font-variant: normal;
+
+}
+
+.bold{
+    /* $ Font-weight */
+    /* ? Esta propiedad específica establece el grosor de la fuente usada. Esta propiedad tiene una combinación de valores soportados, los cuales son: 
+    
+        * Palabras reservadas -> Las palabras reservadas que soporta son:
+
+            * normal -> Es el grosor de la fuente por defecto. Si se aplica, no se verá ningún cambio o regresará al grosor normal de la fuente en caso de haber aplicado alguno otro anteriormente.
+                # font-weight: normal;
+
+            * bold -> Esta palabra reservada agrega un grosor específico equivalente a las negritas.
+                # font-weight: bold;
+
+            * lighter -> Esta palabra reservada agrega un grosor más ligero con respecto a su elemento padre; En otras palabras, si el elemento padre tiene un grosor más grueso, el hijo tendrá uno más fino.
+                # font-weight: lighter;
+
+            * bolder -> Esta palabra reservada se comporta de forma similar a lighter; en lugar de aplicar un grosor más fino al elemento hijo, aplicará uno más grueso.
+                # font-weight: bolder; 
+
+            ! NOTA: CABE RECALCAR QUE NO TODAS LAS FUENTES CUENTAN CON ESTOS VALORES; LA MAYORÍA SÓLO ESTÁN DISPONIBLES EN normal Y bold.
+
+        * Escalares múltiplos de 100 -> Son valores que van desde el 100 hasta el 900. Entre más pequeño es el valor, menos grosor tendrá la fuente; entre más grande es el valor, más grosor tendrá la fuente.
+
+            * Valores entre 100 a 500 -> Los valores comprendidos entre este rango serán considerados "normal", como la palabra reservada.
+                # font-weight: 100; 
+                # font-weight: 500;
+            
+            * Valores entre 600 a 900 -> Los valores comprendidos entre este rango serán considerados "bold", como la palabra reservada.
+                # font-weight: 600;
+                # font-weight: 900;
+    
+    ? */
+
+    /* $ Font-size*/
+    /* ? Esta propiedad específica define el tamaño de fuente. Esta propiedad acepta como valores distintas medias. 
+    
+       ? Ejemplo:
+
+        # font-size: 16px;
+        # font-size: 32px;
+        # font-size: 10px;
+        # font-size: 20px;
+
+    ? */
+
+    color: crimson;
+    font-weight: 400;
+}
+
+.copy{
+    /* $ Font-style */
+    /* ? Esta propiedad específica define un estilo de la fuente. Esta propiedad acepta como parámetros los siguientes valores: 
+    
+        * italic -> Este valor aplicará un estilo "italic" o cursiva a la fuente en cuestión.
+            # font-style: italic;
+
+        * oblique -> Este valor aplicará un estilo "oblique" a la fuente en cuestión; es un estilo más cursivo que el estilo italic.
+            # font-style: oblique;
+
+    ? */
+
+    font-weight: 300;
+}
+
+body{
+    /* $ Font-family */
+    /* ? Esta propieda específica define el tipo de fuente que se aplicará a un texto. En esta propiedad, se debe establecer un listado de fuentes donde el primer valor de fuente es el más alta prioridad y los siguientes tendrá menor prioridad.
+
+       # # font-family: Arial, Helvetica, Cursive;
+
+       ? En caso que la fuente de más alta prioridad no esté disponible, se aplicará el siguiente en la lista.
+
+       ? Ejemplo:
+
+            ↓ Esta propiedad establecerá la fuente Helvetica como fuente disponible debido a que no existe la fuente "Ariaal".
+            # font-family: Ariaal, Helvetica, Cursive;
+
+            ↓ Esta propiedad establecerá la fuente Cursive como fuente debido a que no existen las fuentes "Ariaal" ni "Heflvetica".
+            # font-family: Ariaal, Heflvetica, Cursive;
+            
+       ? Las fuentes de igual forma pueden escribirse entre comillas dobles o simples.
+            # font-family: "Arial", 'Helvetica', Cursive;
+    ? */
+
+    /* $ Font-family personalizadas */
+    /* ? Por último, podemos importar fuentes personalizadas. Para lograr esto, existen dos formas comúnes de hacerlo:
+
+        * Importar desde HTML -> Esto se logra importando en nuestro HTML de interés a la fuente que deseamos importar desde una URL, que bien puede ser de una APÍ o alguna URL que haga referencia a la fuente de forma local. Habremos de hacer referencia a dicha dirección desde el <head> de nuestro HTML.
+        TODO: Ver API añadida en el <head> de index.html
+
+        * Importar desde CSS -> Esto se logra importando con @import url(), donde como parámetro se debe especificar el URL de nuestra fuente personalizada. Puede ser una API o una URL que haga referencia a archivos locales. Por lo general, se hace referencia desde las primeras líneas de nuestro archivo CSS.
+        TODO: Ver API añadida en el inicio de estilos.css
+
+       ? Una vez importadas nuestras fuentes, podremos hacer referencia a nuestra fuente a través desde la propiedad font-family.
+
+       $ Recordatorio: normalmente, suele usarse más la importación de fuentes personalizadas desde HTML.
+
+    ? */
+
+    font-family: 'Raleway', sans-serif;
+
+}
+
+input{
+    /* ! NOTA: font-family NO ES UNA PROPIEDAD HEREDABLE, POR LO QUE EN ALGUNOS CASOS REQUERIREMOS DE FORZAR LA HERENCIA A CIERTOS ELEMENTOS. */
+    /* TODO: Descomentar los elementos especificados en index.html para ver la explicación de Herencia con Font-Family */
+    font-family: inherit;
+    font-size: 20px;
+}
