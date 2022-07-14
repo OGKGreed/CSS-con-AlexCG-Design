@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    /* padding: 0; */
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Arial';
+}
+
+/* $ Listas */
+/* ? Las listas siempre tienen un padding-left de 40px gracias al UserAgent del navegador. Si se resetea el padding, las viñetas de las listas no serán visibles, pues se ubicarán fuera de la vista debido al reset del padding, pero seguirán estando allí.*/
+/* ul, ol{
+    padding: 0;
+} */
+
+/* $ Estilos de listas */
+.lista{
+    background: darksalmon;
+    /* ? Para poder modificar el aspecto de las listas, concretamente de las viñetas, usamos la propiedad list-style. Esta propiedad tiene la siguiente sintaxis:
+    
+       * list-style: type image position;
+
+            * type -> Representa el tipo de viñeta que se visualizará
+
+            * image -> Representa una imagen en caso de requerir usar una viñeta añadida por una imagen
+
+            * position -> Representa la ubicación de la viñeta.
+
+       ? list-style es un shorthand que se desglosa en las siguientes propiedades:
+
+            * list-style-type -> Es la propiedad específica para acceder y modificar el tipo de viñeta que se visualizará
+
+            * list-style-image -> Es la propiedad específica para añadir una imagen como viñeta a través de la función url()
+
+            * list-style-position -> Es la propiedad específica para acceder y modificar la posición de la viñeta.
+
+    /* ? Tanto el shorthand como las propiedades específicas pueden ser usadas en los elementos <li>, <ul> u <ol>. */
+
+    font-size: 24px;
+}
+
+ul{
+    margin: 30px 0;
+    /* $ List-style-type */
+    /* ? Esta propiedad específica soporta los siguientes valores: 
+    
+       * disc -> Es el tipo de viñeta por defecto de las listas desordenadas <ul>. La viñeta es un punto negro.
+            # list-style-type: disc;
+
+       * decimal -> Es el valor por defecto de las listas ordenadas <ol>. La viñeta es un número escrito en el sistema numérico decimal
+            # list-style-type: decimal;
+
+       * square -> El tipo de viñeta es un cuadrado
+            # list-style-type: square;
+
+       * lower-roman -> El tipo de viñeta son números romanos escritos en minúsculas
+            # list-style-type: lower-roman;
+
+       * upper-roman -> El tipo de viñeta son números romanos escritos en mayúsculas
+            # list-style-type: upper-roman;
+
+       * circle -> El tipo de viñeta es un circulo vacío
+            # list-style-type: circle;
+
+       * none -> Este valor quita las viñetas de las listas
+            # list-style-type: none; 
+
+    ? */
+
+    /* $ List-style-image */
+    /* ? Esta propiedad específica añade una imagen usada como viñeta a través de la función url(). 
+
+       # list-style-image: url("img/icono.png");
+    
+    ? */
+    
+    /* $ List-style-position */
+    /* ? Esta propiedad específica modifica la posición de la viñeta. Esta propiedad soporta dos valores:
+
+       * outside -> Es la ubicación por defecto de las listas. Ubican a las viñetas separado del contenido de las listas.
+            # list-style-position: outside;
+
+       * inside -> Este valor posiciona las viñetas dentro del propio contenido de las listas.
+            # list-style-position: inside;
+
+    ? */
+    
+}
+
+/* ol{
+    list-style-type: disc; 
+    list-style-position: inside;
+} */
+
+
+/* $ Imágenes */
+/* ? Generalmente, cuando añadimos una imagen en un archivo HTML, estas de primeras pueden no presentarse de forma adecuada; tal vez se visualicen cortadas, otras veces estiradas, otras veces borrosas o ubicadas en una posición no deseada. */
+figure{
+    width: 200px;
+    height: 400px;
+    background: crimson;
+    margin: 30px auto;
+
+    box-shadow: 0 0 10px rgba(0,0,0,.5);
+}
+
+.img{
+    width: inherit;
+    height: inherit;
+
+/* ? Para solucionar esto, hacemos uso de la propiedad object-fit. Esta propiedad soporta los siguientes valores:
+
+   * fill -> Es el valor por defecto de esta propiedad. Este valor hace que las imágenes adquieran dimensiones acorde al elemento padre, haciendo que esta en ocasiones puedan verse distorcionadas de alguna forma si el elemento padre es muy pequeño o muy grande a comparación de la imagen añadida.
+        # object-fit: fill;
+
+   * contain -> Este valor hace que las imágenes se presenten en un escalado ideal al elemento que lo contiene para poder visualizarse de forma completa.
+        # object-fit: contain;
+
+   * none -> Este valor hace que las imágenes se visualicen en una resolución apreciable; sin embargo, suele recortar las imágenes enfocando a una parte específica de ellas.
+        # object-fit: none;
+
+   * cover -> Es el valor más utilizado comúnmente para tratar imágenes. Este valor hace que las imágenes generalmente se visualicen de forma correcta. En ocasiones pueden presentar ligeros recortes pero suelen ser despreciables, haciendo que la imagen siga apreciándose adecuadamente. Amolda la imagen de la mejor forma posible acorde a las dimensiones de su elemento contenedor.
+        # object-fit: cover;
+? */
+    
+    object-fit: cover;
+}

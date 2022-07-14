@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Arial';
+}
+
+.gallery{
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+    /* background: red; */
+}
+
+.gallery h2{
+    margin: 40px 0;
+    font-size: 35px;
+    border-bottom: 4px solid #4343a1;
+    padding-bottom: 20px;
+}
+
+.container{
+    /* ? Font-size usado en imágenes puede quitar espacios entre ellas si se desea mostrarse en conjunto si se establece con un valor de 0. */
+    font-size: 0;
+
+    /* ? Otras posibles soluciones, no muy eficaces, son: 
+    
+       $ Usar display:block, pero esta solución se recomienda más cuando se hace uso de flexbox.
+       
+       $ Laa otra es usar vertical-align: top directamente en las imágenes. Sin embargo, esta propiedad solo quita los espacios verticales. No existe una propiedad que haga lo mismo pero en horizontal.
+
+    ? */
+}
+.container img{
+    width: 30%;
+    height: 280px;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+    margin-bottom: 20px;
+    /* vertical-align: top; */
+    cursor: pointer;
+    box-shadow: 2px 2px 10px rgba(0,0,0,.5);
+}
