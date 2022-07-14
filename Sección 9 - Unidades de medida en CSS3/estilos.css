@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial;
+    background: #f2f2f2;
+    font-size: 20px;
+    /* height: 600px; */
+}
+
+/* $ Unidades relativas */
+/* ? En CSS, existen unidades fijas y relativas. Las unidades fijas, como su nombre dice, tienen un valor fijo y que siempre valdrá lo mismo por cada una de sus unidades. En cambio, las unidades relativas son unidades que están constantemente sujetas a otros valores, por lo que siempre están cambiando.
+
+   ? Las unidades relativas que existen en CSS son: rem, em, los porcentajes y el viewport. Cada una de estas medidas tienen sus características propias, pero a pesar de ello, es muy común usar todas estas medidas en conjunto.
+
+   ? Las unidades relativas, en el caso de rem y em, están sujetas a la raíz, también llamada root. Esta raíz pertenece al elemento <html> de nuestros archivos HTML; sin embargo, como tal, normalmente cuando hablamos de root, se suele referir al elemento <body> debido a que al ser <html> su elemento padre, este hereda sus propiedades a <body>. Ambas medidas siempre son convertidas al final a pixeles (px), pero esta conversión variará dependiendo el dispositivo desde donde visualicemos nuestra página.
+
+   ? En el caso de los porcentajes y el viewport, su comportamiento depende de unas condiciones menos restrictivas.
+
+? */
+
+/* $ Rem */
+/* ? rem es relativo al valor del font-size la raíz (el elemento <html>); su valor por defecto es 16px. Si este cambia, el valor de rem cambiará. Es decir, si nosotros aplicamos 3rem como medida a un elemento, el navegador hará la multiplicación del valor actual del font-size, que por defecto serán 16px, y lo multiplicará por el número de rem's aplicados; en este caso, 3 rem's x 16px = 48px.
+
+   ? En caso de querer modificar el valor de cada rem, debemos colocar el font-size deseado en pixeles en una regla que contenga al elemento <body> como selector.
+
+   ? El elemento html, al ser el elemento padre del elemento body, hereda a body su font-size; por ende, si quisieramos cambiar el valor del font-size de la raíz, debemos cambiárselo al elemento body. 
+
+   ? Ejemplo:
+    
+        ↓ En este ejemplo se estableció que cada rem valdrá 18px. Si realizamos la conversión anterior con el nuevo valor de cada rem, tendremos: 3rem's x 18px = 54px
+        $ body{
+        $     font-size: 18px 
+        $ }
+   
+? */
+
+.title{
+    font-size: 30px;
+    /* font-size: 1rem; */
+    /* font-size: 2rem; */
+}
+
+/* $ Em */
+/* ? em es relativo al valor del font-size del elemento padre o del propio elemento. Cuando usamos em y lo aplicamos a un elemento cualquiera, se crea un contexto dado por el mismo elemento, o por su elemento padre.  
+
+   ? Es decir, si tenemos un elemento padre con 3 elementos hijos, y a su vez, el segundo hijo del elemento principal tiene 2 elementos hijos, y aplicamos alguna medida con em en el segundo hijo del elemento principal, el contexto se creará para el segundo elemento hijo del elemento principal, pues actuará como padre que contiene a otros 2 elementos hijos. Por lo tanto, si usamos em nuevamente dentro de ese contexto, pero aplicado a uno de los dos hijos del segundo elemento hijo del elemento principal, em tomará el valor del font-size que se le haya aplicado al elemento padre, que en este caso, sería el segundo elemento hijo del elemento principal.
+
+   ? Si el propio elemento tiene un font-size definido, tomará dicho valor para em; de otra forma, tomará el valor especificado en la raíz, o sea, en el body. Si no se define un valor distinto, el font-size valdrá 16px.
+   
+   ! IMPORTANTE: em ES UNA MEDIDA QUE SE COMPORTA DISTINTO DEPENDIENDO EL CONTEXTO; SE MODIFICA CON RESPECTO A LA CASACADA DE LOS ELEMENTOS. CADA ELEMENTO PADRE REPRESENTA UN CONTEXTO DISTINTO, POR LO QUE CUANDO SE TERMINA DE RENDERIZAR LOS ELEMENTOS HIJOS, EL CONTEXTO SE REINICIA Y em TOMARÁ EL VALOR DEL font-size DEL ELEMENTO PADRE INMEDIATO, QUE SERÍA EL ROOT O EL BODY.
+
+? */
+
+.opinion{
+    width: 70%;
+    margin: 40px auto;
+    box-shadow: 8px 8px 16px rgba(0,0,0,.5);
+
+    /* font-size: 50px; */
+    padding: 2em;
+}
+
+.text{
+    font-size: 20px;
+}
+
+/* $ Limitadores de medida y porcentajes */
+.container{
+    /* width: 80%; */
+    /* height: 300px; */
+
+    background: steelblue;
+    /* margin: 30px auto; */
+    
+    /* $ Limitadores */
+    /* ? Existen dos tipos de limitadores: los limitadores mínimos y los máximos. Los mínimos los encontramos denotados con la palabra min al inicio de la propiedad, y los máximos, con la palabra max. */
+
+    /* $ Limitadores Max */
+    /* ? Los limitadores max establecen una medida máxima para un elemento. Es decir, si creamos un elemento con un width de 400px, y una altura de 1200px, y luego establecemos un width y un height con un límite de 400px cada uno, sólo se mostrarán 400px tanto de width como de height, debido a que hemos limitado nuestras medidas con estos limitadores. 
+    
+       ? Los limitadores max tienen la peculiaridad de que el elemento al que limitemos no se renderizará sin que se definan sus dimensiones, concretamente, que exista un height. Por lo tanto, podemos omitir el width y simplemente definir el height del elemento, y con los limitadores max, crearemos el elemento sin un width definido previamente.
+
+       ? De igual forma, habrán ocasiones en las que usaremos los limitadores max para definir el tamaño de un elemento según su contenido y no sus dimensiones. Es decir, si nuestro elemento tiene un párrafo, los limitadores max limitarán las dimensiones en las que se representa el elemento en cuestión con su contenido.
+
+    ? */
+    /* width: 400px; */
+    /* height: 1200px; */
+    /* max-width: 400px; */
+    /* max-height: 400px; */
+
+    /* $ Limitadores Min */ 
+    /* ? Los limitadores min son contrarios a los max, es decir, establecen una medida mínima para un elemento. A diferencia de los max, los min renderizan los elementos sin necesidad de necesitar definir las dimensiones del elemento. 
+    
+       ? Al usar limitadores min, debemos tener en cuenta el tipo de elemento que estamos tratando; si este es un elemento de bloque, al definir una medida mínima no podrá medir menos que lo establecido, sin embargo, ocupará el tamaño completo de su padre, por lo que se recomienda siempre usar los limitadores min en conjunto de los limitadores max para limitar el tamaño máximo que puede llegar a ocupar un elemento contenido por otro.
+
+       ? En caso de definir un width previamente, y luego un min-width, el width definido será ignorado, completando así la medida faltante al elemento para cumplir con la medida mínima del elemento.
+    
+    ? */
+    /* min-width: 200px; */
+    /* min-height: 200px; */
+    /* max-width: 400px; */
+    /* max-height: 400px; */
+    
+    /* $ Porcentajes */
+    /* ? Los porcentajes son medidas que representan cuanto ocupará un elemento dado en un espacio. Por ejemplo, si definimos elemento con un width de 80%, este ocupará el 80% del espacio donde se ubique a lo ancho, y de la pantalla desde donde se visualice. 
+    
+       ? Por lo tanto, ocupará distintos tamaños según el dispositivo, pero siempre ocupará el 80% permitido según la pantalla del dispositivo.
+
+       ! IMPORTANTE: LAS MEDIDAS CON PORCENTAJES OCUPARÁN SIEMPRE UN PORCENTAJE DEL TAMAÑO DEL ELEMENTO PADRE DONDE SE UBIQUE EL ELEMENTO EN CUESTIÓN AL QUE SE LE APLICAN ESTAS MEDIDAS. ES DECIR, SI TENEMOS UN ELEMENTO PADRE CON UN WIDTH Y HEIGHT DE 500PX, Y DEFINIMOS NUESTRO ELEMENTO HIJO CON UN WIDTH DEL 50%, OCUPARÁ LA MITAD DE LO QUE MIDE SU ELEMENTO PADRE.
+
+       $ Recordatorio: Para que un elemento exista, su elemento padre, o en su defecto, el propio elemento, debe tener definido como mínimo un height.
+       
+       TODO: Descomentar el height definido en la regla body para ver el elemento .container.
+    ? */
+    /* width: 70%; */
+    /* width: 95%; */
+    /* height: 300px; */
+    /* width: 50%; */
+    /* height: 80%; */
+
+    /* $ Viewport */
+    /* ? El Viewport es el "campo de visión" que tenemos en un dispositivo; sus valores van desde 0 hasta 100 de viewport. Los valores son fijos, sin embargo, este cambiará dependiendo el dispositivo desde donde se visualice la página en cuestión. Los Viewports que existen son: 
+    
+        ? Viewport Width (vw) -> Se refiere a la medida con respecto al eje X, es decir, a lo ancho del Viewport.
+
+        ? Viewport Height (vh) -> Se refiere a la medida con respecto al eje Y, es decir, a lo largo del Viewport.
+    
+        ? El Viewport, a diferencia del resto de medidas relativas, no tiene algún tipo de dependencias con sus elementos padre. Los elementos que hagan uso del Viewport dependerán del navegador o pantalla desde donde se visualice.
+
+    ? */
+    width: 50vw;
+    /* width: 100vw; */
+    /* width: 2vw; */
+    /* width: 10vw; */
+    height: 100px;
+
+    /* width: 100vw; */
+    /* height: 100vh; */
+}
+
+.children{
+    /* width: 100%;
+    height: 50%;
+    background: crimson; */
+}
