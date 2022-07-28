@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.box{
+    /* display: block; */
+    background: steelblue;
+    width: 55px;
+    height: 55px;
+    margin: 10px 0;
+    margin-left: 5px;
+    text-align: center;
+    line-height: 55px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.container{
+    margin-left: -5px;
+    padding: 10px 0;
+    border: 3px solid lightcoral;
+}
+
+/* ! Pseudoclases Child */
+/* ? Estas pseudoclases son condicionales, es decir, sólo se aplicarán a los elementos que cumplan la condición especificada. */
+
+/* $ Pseudoclase :only-child */
+/* ? Esta pseudoclase se aplica a todos los elementos que son hijos únicos, es decir, que no tengan hermanos dentro de su contenedor.
+
+   ! NOTA: EN ESTE CASO, CUALQUIER OTRO ELEMENTO, INCLUYENDO ELEMENTOS DE UN TIPO DISTINTO CONTARÁN COMO ELEMENTOS HERMANOS.
+
+? */
+/* TODO: Descomentar para ver el efecto. Comentar cuando se termine de ver. */
+/* ↓ Esta regla se aplica solo al elemento con el texto 5.1 debido a que no tiene ningún elemento hermano dentro de su contenedor. */
+/* .box:only-child{
+    background: tomato;
+} */
+
+/* $ Pseudoclase :first-child */
+/* ? Esta pseudoclase se aplica sólo al primer elemento de su contenedor. Esta pseudoclase comienza a aplicarse desde arriba hacia abajo, por lo que requiere que los elementos que seleccionemos se encuentren ubicados primero en sus contenedores.*/
+/* TODO: Descomentar para ver el efecto. Comentar cuando se termine de ver. */
+/* ↓ Esta regla se aplica a los elementos con el texto 1, 1.1 y 5.1 debido a que son los primeros ubicados dentro de sus contenedores. */
+/* .box:first-child{
+    background: tomato;
+} */
+
+/* ↓ Esta regla no se aplica a ningún elemento debido a que el elemento p con el texto 1.3 no es el primer hijo dentro de su contenedor. Si cambiaramos dicho elemento al primer lugar, sí se aplicaría la regla. */
+/* p:first-child{
+    background: tomato;
+} */
+
+/* $ Pseudoclase :last-child */
+/* ? Esta pseudoclase comienza a aplicarse desde abajo hacia arriba, y se aplica forzosamente a los elementos hijos que son últimos hijos dentro de su elemento padre.*/
+/* TODO: Descomentar para ver el efecto. Comentar cuando se termine de ver. */
+/* ↓ Esta regla solamente se aplica al elemento con el texto 5.1 debido a que es el último div dentro de su contenedor padre que sería el elemento <section>, que a su vez actúa como último hijo de <body> y al contener dicho div, califica para aplicarse dicha regla. */
+/* div:last-child{
+    background: crimson;
+} */
+/* ! NOTA: SI CAMBIARAMOS DE LUGAR EL ELEMENTO CON EL TEXTO 1.2 AL ÚLTIMO HIJO DE SU CONTENEDOR, SE APLICARÍA DICHA REGLA. */
+
+/* $ Pseudoclase :nth-child() */
+/* ? Esta pseudoclase se aplica a todos los enésimos elementos hijos que se especifiquen. Forzosamente, deben ocupar el lugar especificado dentro de sus contenedores, ya que si no lo ocupan, no se le aplicará la pseudoclase.
+
+   ! NOTA: ESTA PSEUDOCLASE SOPORTA LAS PALABRAS RESERVADAS odd E even, AL IGUAL QUE EXPRESIONES CON n.
+
+? */
+/* TODO: Descomentar para ver el efecto. Comentar cuando se termine de ver. */
+/* ↓ Esta regla no se aplica al elemento con el texto 3 debido a que, dentro de su contenedor, que es <body>, el tercer hijo es un elemento <section>. */
+/* div:nth-child(3){
+    background: tomato;
+} */
+
+/* ↓ En cambio, esta regla sí se aplica al elemento con el texto 3 debido a que dentro de su contenedor, dicho div es el cuarto elemento hijo dentro de su contenedor. */
+/* div:nth-child(4){
+    background: tomato;
+} */
+
+/* $ Pseudoclase :nth-last-child() */
+/* ? Esta pseudoclase comienza a contar desde abajo. Se aplica a todos los enésimos elementos hijos que estén ubicados al último lugar dentro de su contenedor. 
+
+   ! NOTA: ESTA PSEUDOCLASE SOPORTA LAS PALABRAS RESERVADAS odd E even, AL IGUAL QUE EXPRESIONES CON n.
+
+? */
+/* TODO: Descomentar para ver el efecto. Comentar cuando se termine de ver. */
+/* ↓ Esta regla se aplica a los primeros elementos ubicados al último lugar dentro de su contenedor. En este caso, se aplica a los elementos con el texto 5.1 y 1.3 debido a que son los últimos hijos ubicados al primer lugar dentro de los elementos con la clase .container. */
+/* .container :nth-last-child(1){
+    background: tomato;
+} */
+.container:nth-last-child(1){
+    background: tomato;
+}

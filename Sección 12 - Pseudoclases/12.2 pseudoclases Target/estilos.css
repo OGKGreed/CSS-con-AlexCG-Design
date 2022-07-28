@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.event{
+    display: inline-block;
+    margin-top: 30px;
+    margin-left: 20px;
+    background: crimson;
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+}
+
+.event:active{
+    padding: 23px;
+}
+
+/* $ Pseudoclase :target */
+/* ? Esta pseudoclase actúa con elementos ligados por anclas, es decir, que un elemento <a> haga referencia a un elemento por medio de su id. */
+
+#objetivo{
+    width: 100px;
+    height: 100px;
+    margin-top: 30px;
+    margin-left: 20px;
+    background: steelblue;
+    transition: .3s;
+}
+
+#objetivo:target{
+    margin-left: 150px;
+}

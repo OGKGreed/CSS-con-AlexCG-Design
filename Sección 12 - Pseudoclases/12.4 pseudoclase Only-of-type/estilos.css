@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.box{
+    /* display: block; */
+    background: steelblue;
+    width: 55px;
+    height: 55px;
+    margin: 10px 0;
+    margin-left: 5px;
+    text-align: center;
+    line-height: 55px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.container{
+    margin-left: -5px;
+    padding: 10px 0;
+    border: 3px solid lightcoral;
+}
+
+/* $ Pseudoclase :only-of-type */
+/* ? Esta pseudoclase se aplica a los elementos que son hijos únicos, es decir, que no tienen hermanos de su mismo tipo.
+
+   ! NOTA: ESTA PSEUDOCLASE AÑADE ESPECIFICIDAD.
+   
+? */
+/* ↓ Esta regla se aplicará solo a los elementos div que sean hijos únicos encerrados por un elemento padre. Como no existen otros elementos div, se aplicará un color de fondo crimson al elemento con el texto 5.1. */
+/* TODO: Descomentar para ver el efecto. Comentar cuando se termine de ver. */
+/* div:only-of-type{
+    background: tomato;
+} */
+
+/* ↓ Esta regla se aplicará solo a los elementos que tengan la clase .box y que sean hijos únicos de un mismo tipo encerrados por un elemento padre. El elemento con el texto 5.1 es hijo único dentro de su sección; en cambio, el elemento con el texto 1.3 tiene hermanos pero es hijo único de su mismo tipo, es decir, no hay otros elementos <p>, por lo que califica para aplicársele estos estilos.*/
+/* TODO: Descomentar para ver el efecto. Comentar cuando se termine de ver. */
+/* .box:only-of-type{
+    background: tomato;
+} */

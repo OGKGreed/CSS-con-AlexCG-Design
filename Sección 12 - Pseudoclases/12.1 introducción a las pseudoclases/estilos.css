@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ! Pseudoclases */
+/* ? Las pseudoclases son "selectores" de estado de un elemento. Tienen una especificidad, pero sólo algunas de ellas. Además, existen pseudoelementos que se aplican sólo a un tipo de elemento en específico. 
+
+   ? Las pseudoclases sirven como filtro para los selectores. Su sintaxis es la siguiente:
+
+   * selector:pseudoclase
+
+        * selector -> Representa el selector de nuestro interés. Puede ser un selector de etiqueta, de clase, id, etc.
+
+        * :pseudoclase -> Representa la pseudoclase que se va a aplicar. Las pseudoclases siempre se aplican diferencian porque inician con dos puntos ( : ) seguido del nombre de la pseudoclase a aplicar.
+
+   $ Consejo: algunas pseudoclases se recomiendan usar de la siguiente forma:
+
+        $ selector :pseudoclase
+
+   $ La diferencia entre usar la pseudoclase separada por un espacio de su selector, es que dicho espacio representa un selector universal implícito ( * ), por lo tanto, significa que aplicará dicha pseudoclase a todos los elementos que tengan el selector especificado como elemento padre. 
+
+   $ En cambio si se usa sin espacios, la pseudoclase se aplicará a los elementos que tengan el selector y que cumplan alguna condición.
+
+? */
+
+/* $ Pseudoclase :link */
+/* ? Esta pseudoclase se aplica solamente a los elementos <a>, específicamente a los enlaces que no han sido visitados. Con esta pseudoclase, podemos aplicar un estilo en específico a los enlaces que conducen a estas vistas. */
+.enlace{
+    display: block;
+    background: tomato;
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+    border-bottom: 3px solid #ebd1db;
+}
+
+.enlace:link{
+    background: burlywood;
+    color: #000;
+}
+
+/* $ Pseudoclase :visited */
+/* ? Esta pseudoclase se aplica solamente a los elementos <a> que ya han sido visitados. */
+.enlace:visited{
+    background: crimson;
+}
+
+/* $ Pseudoclase :hover */
+/* ? Esta pseudoclase se aplica a los elementos a los que se le pasa el mouse por encima. 
+
+   ! NOTA: ESTA PSEUDOCLASE ACTÚA COMO CLICK EN DISPOSITIVOS MÓVILES
+
+? */
+.enlace:hover{
+    /* text-decoration: underline; */
+    padding: 40px 20px;
+    transition: .3s;
+}
+
+/* $ Pseudoclase :active */
+/* ? esta pseudoclase se aplica a los elementos a los que se hace click, es decir, se aplica mientras tengamos el click presionado sobre el elemento.*/
+.enlace:active{
+    background: steelblue;
+    color: #fff;
+}

@@ -1,0 +1,104 @@
+/* $ Pseudoclase :root */
+/* ? Esta pseudoclase se aplica a la raíz de nuestro documento; generalmente suele ser el elemento <html> de nuestro archivo HTML.
+
+   # Se puede usar para añadir estilos que quieran aplicar en todos los archivos HTML, o para introducir variables CSS y que de esta forma se puedan acceder desde cualquier lado.
+
+? */
+/* ↓ Descomentar para ver la regla en ejecución */
+/* :root{
+    background: steelblue;
+} */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.form{
+    width: 80%;
+    margin: 30px auto;
+    background: #f2f2f2;
+    box-shadow: 0 0 5px rgba(0,0,0,.5);
+    padding: 30px;
+}
+
+.form__title{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input{
+    display: block;
+}
+
+input[type="text"], input[type="email"]{
+    width: 100%;
+    padding: 12px 5px;
+    margin-bottom: 20px;
+    border: none;
+    outline: none;
+}
+
+input[type="checkbox"]{
+    display: inline-block;
+}
+
+/* ! Pseudoclases para formularios */
+
+/* $ Pseudoclase :focus */
+/* ? Esta pseudoclase selecciona a los elementos donde el usuario está activo en él. */
+input:focus{
+    background: rgba(220, 20, 60, 0.424);
+}
+
+/* ↓ Esta misma pseudoclase se puede usar para elementos <h> que tengan el atributo <<contenteditable>>.*/
+/* h2:focus{
+    background: crimson;
+    color: #fff;
+} */
+
+/* $ Pseudoclase :checked */
+/* ? Esta pseudoclase se aplica a los elementos que hayan sido seleccionados. Solamente funciona para inputs de tipo radio y checkbox. */
+input[type="checkbox"]:checked + label {
+    background: crimson;
+    color: #fff;
+}
+
+/* $ Pseudoclase :focus-within */
+/* ? Esta pseudoclase se aplica a elementos contenedores (o padres) que tengan a un elemento hijo que tenga el estado de :focus. */
+.form:focus-within{
+    background: darkcyan;
+}
+
+/* ! Pseudoclase Not */
+/* ? Esta pseudoclase actúa como una negación lógica. Se aplica a los elementos que no cumplan una condición especificada entre paréntesis.
+
+   ! NOTA: DENTRO DE LOS PARÉNTESIS, PODEMOS ESPECIFICAR CUALQUIER COSA, INCLUYENDO PSEUDOELEMENTOS.
+
+   ? Esta pseudoclase no tiene especificidad, pero lo que contenga en su interior, sí.
+
+? */
+h3{
+    font-size: 2rem;
+    font-weight: normal;
+    font-family: 'Arial';
+    text-align: center;
+    margin-bottom: 30px;
+}
+/* ↓ Esta regla aplicará un color crimson a los elementos h3 que no tengan la clase .title */
+/* TODO: Descomentar para ver el efecto. Comentar de nuevo cuando se haya concluído. */
+/* h3:not(.title){
+    color: crimson;
+} */
+
+/* ↓ Esta regla aplicará un subrayado entre medias de los elementos que no estén en el estado :hover */
+h3:not(:hover){
+    text-decoration: line-through;
+}
+
+/* ? De igual forma, podemos concatenar condiciones, de forma que se apliquen estilos a elementos que no cumplan múltiples condiciones. */
+/* TODO: Descomentar para ver el efecto. Comentar de nuevo cuando se haya concluído. */
+/* h3:not(.title):not(:hover){
+    color: crimson;
+} */

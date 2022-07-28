@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.box{
+    /* display: block; */
+    background: steelblue;
+    width: 55px;
+    height: 55px;
+    margin: 10px 0;
+    margin-left: 5px;
+    text-align: center;
+    line-height: 55px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.container{
+    margin-left: -5px;
+    padding: 10px 0;
+    border: 3px solid lightcoral;
+}
+
+/* $ Pseudoclase :first-of-type */
+/* ? Esta psudoclase se aplica al primer elemento de su tipo dentro de su contenedor. Esta pseudoclase se aplica sin importar la existencia de elementos hermanos del mismo tipo.*/
+/* TODO: Descomentar para ver el efecto. Comentar cuando se termine de ver. */
+/* .box:first-of-type{
+    background: tomato;
+} */
+
+
+/* $ Pseudoclase :last-of-type */
+/* ? Esta pseudoclase es la inversa a :first-of-type; se aplica al último elemento de su tipo dentro de su contenedor.*/
+/* TODO: Descomentar para ver el efecto. Comentar cuando se termine de ver. */
+/* .box:last-of-type{
+    background: tomato;
+} */
+
+/* $ Pseudoclase :nth-of-type() */
+/* ? Esta pseudoclase se aplica al enésimo elemento de su mismo tipo dentro de su contenedor que se le indique entre paréntesis a la pseudoclase. */
+/* TODO: Descomentar para ver el efecto. Comentar cuando se termine de ver. */
+
+/* ↓ En este caso, estamos indicando que se aplique un fondo tomato al segundo elemento de su tipo dentro de su contenedor. Por lo tanto, se seleccionará el elemento con el texto 2 y 1.2.*/
+/* .box:nth-of-type(2){
+    background: tomato;
+} */
+
+/* ↓ En este caso, estamos indicando que se aplique un fondo tomato al tercer elemento de su tipo dentro de su contenedor. Por lo tanto, se seleccionará solo el elemento con el texto 3 debido a que es el tercer elemento dentro de su contenedor. */
+/* .box:nth-of-type(3){
+    background: tomato;
+} */
+
+/* ? Si colocamos entre los paréntesis la palabra reservada odd, se aplicará a los elementos impares de su mismo tipo dentro de su contenedor */
+/* ↓ Seleccionará a los elementos con el texto 1, 1.1, 1.3, 3 y 5.1 debido a que son elementos impares dentro de sus contenedores. */
+/* .box:nth-of-type(odd){
+    background: tomato;
+} */
+
+/* ? Y si colocamos entre los paréntesis la palabra reservada even, se aplicará a los elementos pares de su mismo tipo dentro de su contenedor */
+/* ↓ Seleccionará a los elementos con el texto 2, 1.2 y 4 debido a que son elementos pares dentro de sus contenedores. */
+/* .box:nth-of-type(even){
+    background: tomato;
+} */
+
+/* ? Si colocamos <n> dentro de los paréntesis, se aplicará a todos los elementos de su mismo tipo dentro de su contenedor, pues actúa como un acumulador y se aplicará a todos los elementos coincidentes que se encuentren en el documento. 
+
+   ! NOTA: n COMIENZA A ITERAR DESDE EL 0.
+
+? */
+/* .box:nth-of-type(n){
+    background: tomato;
+} */
+
+/* ? n es un término con el cual podemos hacer expresiones algebráicas para hacer cálculos más precisos. 
+
+   ? Por ejemplo, hacer una regla con la pseudoclase :nth-of-type(2n+1), donde se comenzará a iterar desde el 0 hasta el valor de n términos del mismo tipo encontrados en todo el documento y se aplicarán a los elementos resultantes de resolver la expresión 2n+1. 
+
+   $ 2(0) + 1 = 1
+   $ 2(1) + 1 = 3
+   $ 2(2) + 1 = 5
+   $ 2(3) + 1 = 7
+   $ ...
+
+   ? Como se puede observar en la sucesión, cuando se encuentren más elementos que alimenten al acumulador, n seguirá creciendo. Por lo tanto, la expresión 2n+1 aplicará la pseudoclase a los primeros, terceros, quintos, séptimos, etc..., hasta llegar a n elementos dentro de su contenedor.
+
+? */
+/* .box:nth-of-type(2n+1){
+    background: tomato;
+} */
+
+/* $ Pseudoclase :nth-last-of-type() */
+/* ? Esta pseudoclase actúa de forma similar a :last-of-type; comienza a contar desde abajo hacia arriba y se aplica a los elementos de su mismo tipo dentro de sus contenedores. 
+
+   ! NOTA: DE IGUAL FORMA PODEMOS USAR n, odd E even.
+
+? */
+/* .box:nth-last-of-type(1){
+    background: tomato;
+} */
