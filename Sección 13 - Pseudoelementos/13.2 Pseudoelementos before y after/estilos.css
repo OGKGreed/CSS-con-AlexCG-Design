@@ -1,0 +1,175 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body{
+    background: salmon;
+    font-family: 'Arial';
+}
+
+.card{
+    width: 300px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: -20px -20px 0 0 #fb968b;
+    border-radius: 10px;
+}
+
+.card__title{
+    padding-bottom: 7px;
+    margin-bottom: 10px;
+
+    /* ↓ Comentar/descomentar esta propiedad cuando se solicite. */
+    border-bottom: 3px solid salmon;
+
+    /* ↓ Comentar/descomentar esta propiedad cuando se solicite. */
+    /* text-align: center; */
+}
+/* ! PARTE 1: INTRODUCCIÓN A LOS PSEUDOELEMENTOS ::before Y ::after */
+/* TODO: Sigue las instrucciones que se mencionan a continuación para seguir con la lectura.
+/* $ Descomenta el código HTML ubicado en la parte 1 en index.html. Vuelve a comentarlo a pasar de sección.
+
+   $ Descomentar border-bottom: crimson en .card__title ubicado en estilos.css.
+
+   $ Comentar text-align: center en .card__title ubicado en estilos.css */
+   
+/* $ Pseudoelementos ::before y ::after */
+/* ? Estos pseudoelementos permiten insertar elementos sin necesidad de escribirlos, o de estar escritos en el HTML. 
+
+   ? El navegador se encargará de crear dichos elementos, y como sus nombres indican, el orden de creación será antes del elemento, en el caso de ::before, y después del elemento en caso de ::after.
+
+   ? Gráficamente, la creación de dichos elementos sería de la siguiente forma:
+
+   $ <elemento>
+
+        # ::before
+        $ Contenido
+        # ::after
+
+   $ </elemento>
+
+? */
+
+/* ? Los pseudoelementos ::before y ::after pueden añadir contenido al elemento que nosotros deseemos a través de la propiedad content. 
+
+   ? Esta propiedad permite añadir texto, usando comillas dobles ( "" ), o bien, una imagen a través de la función url().
+
+   ! NOTA: PODEMOS DEJAR EL CONTENT VACÍO DEJANDO LAS COMILLAS DOBLES SIN CONTENIDO.
+
+? */
+/* .card__text::before{
+    content: "Hola, ";
+}
+
+.card__text::after{
+    content: " Quevedo. ";
+} */
+
+/* ? Si inspeccionamos el elemento con la clase .card__text, veremos que el inspector representa tal cual a los elementos ::before y ::after.  */
+
+
+/* ! PARTE 2: BOX MODEL EN LOS PSEUDOELEMENTOS PERSONALIZDOS */
+/* TODO: Sigue las instrucciones que se mencionan a continuación para seguir con la lectura. */
+/* $ Comentar el elemento p con la clase .card__Text en index.html.
+
+   $ Comentar border-bottom: crimson en .card__title ubicado en estilos.css.
+
+   $ Descomentar text-align: center en .card__title ubicado en estilos.css */
+
+/* ? Los pseudoelementos ::before y ::after también siguen el box model, por lo tanto, podemos crear elementos personalizados sin necesidad de insertarlos directamente en el HTML. */
+
+/* ? Para crear elementos personalizados, forzosamente debemos definir la propiedad content a pesar de que no añadiremos contenido, pues de otro forma, los pseudoelementos no serán crearán en el HTML; por lo tanto, definimos el content con comillas dobles vacías.
+
+   ? Creamos entonces los elementos personalizados con los pseudoelementos ::before y ::after con las siguientes propiedades.
+   
+   ! NOTA: LOS PSEUDOELEMENTOS ::before Y ::after REQUIEREN DE UN DISPLAY PARA SER VISIBLES EN EL HTML.
+
+   $ Recordatorio: realmente, sin un display el elemento creado a partir de un pseudoelemento no tendrá dimensiones, pero estará allí si se inspecciona el elemento.
+
+   ? Además, aquí usamos display para que los elementos creados a partir de los pseudoelementos ocupen el 100% de su contenedor a lo ancho.
+
+? */
+
+/* ↓ Tener en cuenta que estas reglas se pueden refactorizar poniendo una misma regla con ambos selectores, pero se colocó así con fines demostrativos para hacer entendible qué se está aplicando a cada pseudoelemento. */
+/* .card__title::before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 5px;
+    background: salmon;
+} */
+
+/* .card__title::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 5px;
+    background: salmon;
+} */
+
+
+/* ? Como los pseudoelementos ::before y ::after siguen las reglas del box model, también pueden tener propiedades como el padding. 
+
+   ? Si añadimos un padding a .card__title::before, podremos observar que este elemento creado a partir del pseudoelemento es más grande que el elemento creado por ::after.
+
+? */
+
+/* .card__title::before{
+    padding: 2px
+} */
+
+/* ? La explicación a esto, es que al seguir el box model, también siguen el box-sizing. El selector universal que solemos especificar al inicio de cada documento CSS sólo se aplica a elementos HTML, no elementos creados a partir de pseudoelementos.
+
+   $ Solución: la recomendación es que siempre se añada de igual forma a esta regla los pseudoelementos ::before y ::after en su forma con selector universal implícito ( ::before, ::after ) para que a estos pseudoelementos se les aplique un box-sizing: border-box. 
+   
+   ! NOTA: SE AÑADIÓ EN ESTE PUNTO DEL DOCUMENTO CON FINES EDUCATIVOS PARA DEMOSTRAR LA DIFERENCIA; LO CORRECTO ES HACER DICHA ESPECIFICACIÓN SIEMPRE AL INICIO DEL DOCUMENTO.
+   
+? */
+
+/* *, ::before, ::after{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+} */
+
+
+
+/* ! PARTE 3: CONTADORES */
+/* TODO: Descomenta el código HTML ubicado en la parte 3 en index.html. Vuelve a comentarlo a pasar de sección. */
+/* ? Para crear un contador, usamos la propiedad counter-reset, que aceptar como parámetro un identificador de nuestra preferencia. */
+
+/* ul{
+counter-reset: contador;
+} */
+
+/* $ Damos estilos complementarios a los elementos <li> para tener mejor apariencia. */
+
+/* li{
+    list-style: none;
+    padding: 0;
+    margin-bottom: 10px;
+} */
+
+/* ? Para hacer uso del contador, podemos usar dicho contador definiéndolo como parámetro en la propiedad content usando la función counter(), que acepta como parámetro el identificador de nuestro contador.
+
+   ? Cuando se define un contador, al inicio siempre iniciará en 0. Al aplicarsele a todos los pseudoelementos de los elementos <li>, tendrá un 0. Por lo tanto, para hacer que este contador incremente, usamos la propiedad counter-increment, que como valor aceptará el identificador del contador que creamos.
+
+? */
+
+/* li::before{
+    content: counter(contador);
+    counter-increment: contador;
+
+    background: salmon;
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    margin-right: 4px;
+} */

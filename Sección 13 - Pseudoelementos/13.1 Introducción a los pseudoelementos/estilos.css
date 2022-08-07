@@ -1,0 +1,78 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body{
+    background: salmon;
+    font-family: 'Arial';
+}
+
+.card{
+    width: 300px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: -20px -20px 0 0 #fb968b;
+    border-radius: 10px;
+}
+
+.card__title{
+    border-bottom: 3px solid salmon;
+    padding-bottom: 7px;
+    margin-bottom: 10px;
+}
+
+/* ! PSEUDOELEMENTOS */
+/* ? Los pseudoelementos permiten añadir estilos a una parte concreta del documento o de los elementos. Por ejemeplo: la primera línea de un párrafo, o el atributo placeholder.
+
+   ? A diferencia de las pseudoclases, los pseudoelementos se ponen con 4 puntos, como se muestra a continuación:
+
+        $ selector::pseudoelemento
+
+   ? De igual forma, si no se añade un selector antes del pseudoelemento, se entiende que existe un selector universal ( * ) implícito, por lo que se aplicará a todos los elementos del documento.
+
+? */
+
+/* $ Pseudoelemento ::selection */
+/* ? Este pseudoelemento se aplica a la selección de un elemento. Es decir, cuando pasamos el curso manteniendo el click por encima del elemento.  */
+/* p::selection{
+    background: steelblue;
+    color: #fff;
+} */
+
+/* $ Pseudoelemento ::first-line */
+/* ? Este pseudoelemento se aplica a la primera línea de un párrafo. */
+/* p::first-line{
+    color: crimson;
+    font-weight: bold;
+    font-size: 2rem;
+} */
+
+/* $ Pseudelemento ::first-letter */
+/* ? Este pseudoelemento se aplica a la primera letra de un párrafo. */
+/* .card__title::first-letter{
+    font-size: 2rem;
+    line-height: 3rem;
+    letter-spacing: 20px;
+} */
+
+/* $ Pseudoelemento ::placeholder */
+/* ? Este pseudoelemento se aplica al placeholder de un elemento input de tipo texto. */
+
+/* ↓ Damos estilos para dar mejor apariencia al input */
+input[type="text"]{
+    margin-left: 20px;
+    padding: 15px 3px;
+    background: crimson;
+    color: #fff;
+    border: none;
+    border-bottom: 4px solid #fff;
+    outline: none;
+}
+
+/* ↓ Usamos el pseudoelemento ::placeholder para modificar el placeholder del input dándole un color blanco. */
+input[type="text"]::placeholder{
+    color: #fff;
+}
