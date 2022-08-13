@@ -1,0 +1,212 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Arial';
+
+    height: 300vh;
+}
+
+.container{
+    width: 450px;
+    height: 530px;
+    margin: 20px auto;
+    border: 5px solid crimson;
+
+    position: relative;
+}
+
+.box{
+    background: steelblue;
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    margin-left: 20px;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    line-height: 100px;
+}
+
+/* ! Posicionamiento de cajas */
+/* ? Entendemos por posicionamiento de cajas a la acción de posicionar un conjunto de elementos, también llamados elementos contenedores porque son elementos que contienen a otros, en un área en particular de nuestra página. 
+
+   ? Para posicionar una caja, debemos tener en cuenta el flujo de creación de elementos del navegador.
+
+? */
+
+/* $ Flujo de creación de elementos del navegador */
+/* ? El flujo de creación de elementos del navegador determina la forma en que se crearán los elementos cuando se acceda a una página.  
+
+   ? Este flujo empieza desde la esquina superior izquierda hacia la esquina inferior derecha.
+
+   ? Para ser más precisos, el flujo del navegador creará: 
+
+        * Desde la izquierda hacia la derecha a los elementos en línea.
+
+        * Desde arriba hacia abajo a los elementos de bloque.
+
+   ? Los elementos que estén dentro del flujo de creación de elementos del navegador se distinguen porque conservan su espacio reservado. En caso de que un elemento, tras modificar su tipo de posicionamiento, pierda su espacio reservado, se considerará un elemento fuera del flujo.
+
+   ? El posicionamiento nos ayudará a modificar o romper este flujo de creación de elementos para posicionar a los elementos como nosotros deseemos.
+    
+? */
+
+/* $ Tipos de posicionamiento */
+/* ? Para determinar la posición de los elementos, hacemos uso de la propiedad position; dicha propiedad soporta los siguientes posicionamientos:
+
+        * static
+
+        * relative
+
+        * absolute
+
+        * fixed
+
+? */
+
+/* $ Posicionamiento static */
+/* ? Es el posicionamiento por defecto de todos los elementos del navegador. Este valor no permite desplazar a los elementos, por lo que todos los elementos que tengan este position no podrán desplazarse ni modificar del flujo de creación de elementos.
+
+   ? Se dice que cuando un elemento posee este position, es un elemento no posicionado; un elemento posicionado desbloquea más propiedades.
+
+? */
+.static{
+    position: static;
+}
+
+/* $ Elementos posicionados */
+/* ? Un elemento posicionado es un elemento que tiene un position distinto a static, por lo tanto, puede hacer uso de las siguientes propiedades para moverse por el navegador.
+
+   * top -> Acepta una medida como valor para desplazar el elemento desde arriba X medida.
+
+   * left -> Acepta una medida como valor para desplazar el elemento desde la izquierda X medida.
+
+   * right -> Acepta una medida como valor para desplazar el elemento desde la derecha X medida.
+
+   * bottom -> Acepta una medida como valor para desplazar el elemento desde abajo X medida.
+
+   ? Si se aplican dichas propiedades a un elemento con position: static, veremos que dicho elemento no se moverá.
+
+? */
+
+/* $ Posicionamiento relative*/
+/* ? Este posicionamiento de entrada no modifica el flujo ni el posicionamiento del elemento; sin embargo, hará que el elemento en cuestión ya sea un elemento posicionado porque desbloquea las propiedades de dicho tipo de elementos.
+
+   ? Se llama posición relativa porque se desplaza a partir de su posición original. Es decir, si aplicamos alguna de las propiedades de un elemento posicionado, el desplazamiento especificado se aplicará a partir de donde el elemento se encuentre.
+
+   $ Recordatorio: como característica distintiva de un elemento con position: relative, los elementos con posición relativa no rompen el flujo de creación de elementos del navegador. En otras palabras, se reservará el espacio que ocupaba originalmente el elemento aunque este haya sido desplazado.
+
+? */
+.relative{
+    background: crimson;
+    
+    /* position: relative; */
+
+    /* top: 50px; */
+    /* left: 200px; */
+    /* right: 3em; */
+    /* bottom: 2rem; */
+}
+
+/* $ Posicionamiento absolute */
+/* ? A diferencia de los elementos con position: relative, los elementos que tengan position: absolute perderá su espacio reservado. En otras palabras, se consideran a estos elementos como elementos que están fuera del flujo de creación de elementos del navegador.
+ 
+   ¿? Dato curioso: Los elementos que tengan un display: none desaparecerán visualmente y su espacio reservado desaparecerá. Por lo tanto, los elementos con dicha propiedad saldrán del flujo de creación de elementos del navegador.
+
+   ? Los elementos con este posicionamiento se posicionarán con respecto al body del navegador si no tienen un elemento posicionado como ancestro. Es decir, si aplicamos alguna de las propiedades de un elemento posicionado, posicionará a los elementos con respecto al navegador.
+
+   ? En caso contrario: si tuvieramos un elemento posicionado que sea ancestro de un elemento absolute, este se posicionará con respecto al ancestro.
+
+? */
+.absolute{
+    background: purple;
+    /* ↓ Descomentar esta propiedad al inicio de la explicación de posicionamiento absolute. Comentar cuando se pase al posicionamiento fixed. */
+    /* position: absolute; */
+
+    /* TODO: Comentar/descomentar esta propiedad para ver cómo los elementos absolute pierden su espacio reservado.*/
+    /* left: 250px; */
+
+    /* TODO: Comentar/descomentar las siguientes propiedades para ver el posicionamiento de un elemento absolute. */
+    
+    /* ↓ No olvides comentar o descomentar esta propiedad para quitar los márgenes aplicados y ver el posicionamiento mejor. */
+    /* margin: 0; */
+
+    /* top: 0; */
+    /* left: 0; */
+    /* right: 0; */
+    /* bottom: 0; */
+
+    /* TODO: Comentar/descomentar el position: relative de .container para ver cómo el elemento absolute se posiciona con respecto a un elemento posicionado. */
+    /* ↓ No olvides comentar o descomentar esta propiedad para quitar los márgenes aplicados y ver el posicionamiento mejor. */
+    /* margin: 0; */
+
+    /* top: 0; */
+    /* right: 0; */
+    /* left: 0; */
+    /* bottom: 0; */
+}
+
+/* $ Z-index */
+/* ? Esta propiedad define el apilamiento de elementos en el eje Z. Los elementos absolute en muchas ocasiones, dependiendo en qué parte del HTML esté ubicados, taparán a unos elementos u otros elementos taparán a estos.
+
+   ? Z-index acepta valores enteros tanto positivos como negativos, y entre más grande sea el número que se especifique, los elementos se superpondrán a otros.
+   
+   ? En otras palabras, es como crear capas. Es decir, si a un elemento le especificamos un z-index de 1 y a otro uno de 3, el elemento con z-index de 3 se verá por encima del otro.
+
+   $ Recomendación: usar valores enteros de 10 en 10.
+
+   ¿? Dato curioso: Z-index pertenece al grupo de propiedades pertenecientes a los elementos posicionados; en otras palabaras, un elemento con position: static no podrá hacer uso de z-index.
+? */
+/* TODO: Comentar/descomentar las siguientes reglas para ver cómo funciona z-index. */
+/* .absolute{
+    margin: 0;
+    top: 30%;
+    left: 40px;
+    z-index: 1;
+}
+.relative{
+    z-index: 3;
+    bottom: 40px;
+    left: 10px;
+} */
+
+/* $ Posicionamiento fixed */
+/* ? Este posicionamiento, al igual que absolute, pierde su espacio reservado cuando se define en un elemento. Pero lo que lo distingue de absolute, es que este posicionamiento se posiciona directamente del navegador (o del viewport), 
+
+   ? Su característica principal es tener elementos fijos en una parte específica del navegador sin que este se mueva de allí. 
+
+? */
+.fixed{
+    background: tomato;
+    /* position: fixed; */
+}
+/* TODO: Sigue las siguientes instrucciones para ver la aplicación de position fixed.*/
+/* $ Comentar/descomentar las siguientes reglas CSS para ver lo que puede hacerse con fixed.
+   
+   $ Agregar un height: 300vh a body.
+
+   $ Comentar/descomentar el elemento fixed que contiene a la etiqueta <a> en index.html. */
+.fixed{
+    background: darkcyan;
+    position: fixed;
+    width: 100%;
+    height: auto;
+    padding: 1em 0;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+}
+
+.fixed a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.fixed a:hover{
+    text-decoration: underline;
+}
