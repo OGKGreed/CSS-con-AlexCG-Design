@@ -1,0 +1,197 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ! Variables en CSS (Custom Properties) */
+/* ? Las variables, o Custom Properties, permiten almacenar valores que va a repetirse muchas veces, y que se desee reutilizar.
+
+   ? Usar Custom Properties en CSS permite ahorrar mucho tiempo para cambiar valores, pues sólo se modifica el valor de la variable, y automáticamente, todas las reglas que hagan uso de la variable cambiarán sus valores.
+
+   $ Recomendación: se recomienda establecer las variables CSS en la pseudoclase *:root, debido a que de esta forma, todos los elementos puedan acceder a las variables. Además, con esta pseuodoclase, nos cercioramos que esta regla siempre se cumpla debido a que tiene una mayor especificidad. 
+
+? */
+
+/* $ Cómo declarar variables CSS */
+/* ? Las variables CSS se declaran siempre haciendo uso de dos guiones medios al inicio de la variable, seguido de un identificador. 
+
+   ! IMPORTANTE: EL IDENTIFICADOR DE LA VARIABLE DEBE INICIAR CON UNA LETRA FORZOSAMENTE, Y NO DEBE CONTENER ESPACIOS.
+
+   ? Por último, en la variables CSS solo podemos declarar valores, no propiedades completas con sus valores.
+
+? Por ejemplo:
+
+        * --color1: crimson;
+
+        * --box-shadow: 6px 6px 10px rgba(0, 0, 0, .5);
+? */
+
+/* $ Cómo usar variables en CSS */
+/* ? Una vez declaradas las variables, hacemos uso de la función var(), que aceptará como parámetro el nombre de nuestra variable creada y definida en *:root.
+
+   ? Por ejemplo:
+
+        * color: var(--color)
+
+   ¿? Nótese que la variable se especificó junto a dos guiones medios al inicio.
+   
+   ? Si cambiamos el valor de una variable, este se actualizará en todas las propiedades donde se use dicha variable.
+
+   TODO: Cambia el valor de las variables mencionadas a los siguientes valores y observa cómo se cambian las propiedades en todos los elementos.
+   * --color1
+   $ darkcyan;
+   $ rgba(266, 230, 33);
+
+   * --box-shadow
+   $ 6px 6px 40px rgba(201, 69, 69, .5);
+   $ 30px 20px 5px rgba(201, 69, 69, .5);
+
+? */
+
+:root{
+    --color1: crimson;
+    --box-shadow: 6px 6px 10px rgba(0, 0, 0, .5);
+
+    --gradient: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+
+    --color2: green;
+    --color3: darkcyan;
+}
+
+body{
+    font-family: 'Arial';
+    min-height: 100vh;
+    background-image: var(--gradient);
+}
+
+.card{
+    background: #fff;
+    width: 300px;
+    margin: 30px auto;
+    padding: 30px 20px;
+    box-shadow: var(--box-shadow);
+}
+
+.card__title{
+    font-size: 30px;
+    color: var(--color1);
+    margin-bottom: 20px;
+}
+
+.card__cta{
+    display: inline-block;
+    padding: 12px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    background-image: var(--gradient);
+}
+
+.card2{
+    background: #fff;
+    width: 300px;
+    margin: 30px auto;
+    padding: 30px 20px;
+    box-shadow: var(--box-shadow);
+}
+
+
+/* $ Fallbacks */
+/* ? Los Fallbacks son valores que se agregan como un reemplazo de las Variables CSS en caso que estas no existan o no estén definidas. 
+
+   ? Para definir un Fallback, dentro de la función var() se declara un segundo parámetro separado del anterior por una coma ( , ). En este parámetro debe:
+
+        * Especificarse un valor -> var(--color1, crimson);
+
+        * O bien, especificarse una nueva variable como Fallback usando nuevamente la función var -> var(--color1, var(--color2)); 
+
+    ¿? Dato: podemos concatenar Fallbacks de modo que se puedan buscar reemplazos a valores específicos.
+    ↓ var(--color1, var(--color2, var(--color3, var(colorN, ...))));
+
+    TODO: Reemplaza los valores de la propiedad color en .card2__title a los que se indican para ver el manejo de Fallbacks.
+    $ var(--color1, steelblue);
+    $ var(--color12, var(--color2));
+    $ var(--color12, var(--color22, var(--color3)));
+
+? */
+.card2__title{
+    font-size: 30px;
+    color: var(--color1, var(--color2));
+    margin-bottom: 20px;
+}
+
+/* $ Alcance de las Variables CSS (Scope) */
+/* ? Algo a tener en cuenta es el alcance de las variables CSS tienen en los elementos de un documento HTML. 
+
+   ? Como en los lenguajes de programación, todas las variables tienen un alcance especificado por distintas condiciones; estas pueden ser de alcances muy grandes, donde cualquier cosa puede interactuar e incluso modificar sus valores, o muy cortos, donde solamente la variable puede usarse en un bloque de código específico y cuando dicho bloque se deje de ejecutar, esta variable dejará de existir.
+   
+   ? En CSS, las variables no son la excepción. El alcance de una variable está definido por la regla CSS. En otras palabras, independiente de si se use un selector de clase, id, etiqueta, etc., si este selector pertenece a un bloque concreto, dicho elemento y sus elementos hijos podrán acceder a una variable.
+
+   ? Ejemplo: 
+
+    .card2{
+        ↓ Definimos una variable --background con el color steelblue y hacemos uso de la variable en la propiedad background.
+        --background: steelblue;
+        background: var(--background);
+
+        width: 300px;
+        margin: 30px auto;
+        padding: 30px 20px;
+        box-shadow: var(--box-shadow);
+    }
+
+    $ .card2 es el elemento padre de la segunda card; al definir una variable en una regla donde el selector hace referencia al elemento con la clase .card2, él y sus elementos hijos podrán hacer uso de la variable --background.
+
+    ¿? Sin embargo, si intentamos hacer uso de dicha variable en la regla con el selector .card, podremos observar que dicho elemento no puede hacer uso de la variable debido a que el scope está limitado solamente al elemento .card2 y sus hijos.
+
+    .card{
+        ↓ Esta propiedad no puede acceder a la variable --background debido a que está fuera del alcance (scope).
+        background: var(--background);
+
+        width: 300px;
+        margin: 30px auto;
+        padding: 30px 20px;
+        box-shadow: var(--box-shadow);
+    }
+
+    ! NOTA: ESTO SOLAMENTE FUNCIONA EN UN SOLO SENTIDO; EL SCOPE SE LIMITARÁ AL ELEMENTO AL QUE HAGAMOS REFERENCIA Y SUS HIJOS. NO FUNCIONA A LA INVERSA NI PARA ELEMENTOS HERMANOS DEL ELEMENTO PADRE.
+    
+    $ Es por dicha razón que en la mayoría de casos se recomienda definir las variables en una regla con el selector universal y la pseudoclase :root ( *:root ).
+
+? */
+
+/* $ Variables locales */
+/* ? Definir una variable en una regla CSS *:root es el equivalente a definir variables globales, pues de esta forma, con la pseudoclase :root nos cercioramos que cualquier elemento pueda acceder a las variables. 
+
+   ? Sin embargo, habrán ocasiones en que necesitemos una propiedad con un valor distinto para un elemento en específico. Por ejemplo:
+
+    
+    .card__title{
+        font-size: 30px;
+        
+        ↓ En esta regla CSS hacemos uso de la variable --color1, que es una variable definida previamente en *:root con un valor crimson. 
+        color: var(--color1);
+        
+        margin-bottom: 20px;
+    }
+
+    * Si se deseara modificar el título de .card2, declaramos una variable en una regla referenciando de preferencia al elemento padre, que en este caso, sería .card2, debido a que de esta forma, nos cercioramos de igual forma que la variable pueda ser accedida desde otros elementos hijos de .card2.
+    
+    .card2{
+        background: #fff;
+        width: 300px;
+        margin: 30px auto;
+        padding: 30px 20px;
+        box-shadow: var(--box-shadow);
+
+        ↓ Modificamos el valor de la variable --color1 de forma local para que tuviera un valor distinto, en este caso un color, usando una misma variable.
+        --color1: darkcyan;
+    }
+
+    $ Hay que tomar en cuenta el hecho de que al utilizar una variable en distintos elementos, si existe una variable local, esta se sobreescribirá solo en el elemento en que se haya declarado.
+    
+? */
+
